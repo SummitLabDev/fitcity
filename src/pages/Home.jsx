@@ -144,19 +144,13 @@ const Home = () => {
         }}
         contentClassName="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]"
       >
-        <div className="grid gap-3 sm:grid-cols-2">
-          <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-5 text-center">
-            <p className="text-2xl font-display">{socialStats[0].value}</p>
-            <p className="mt-1 text-xs uppercase tracking-[0.3em] text-white/50">{socialStats[0].label}</p>
-          </div>
-          <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-5 text-center">
-            <p className="text-2xl font-display">{socialStats[2].value}</p>
-            <p className="mt-1 text-xs uppercase tracking-[0.3em] text-white/50">{socialStats[2].label}</p>
-          </div>
-          <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-5 text-center sm:col-span-2">
-            <p className="text-2xl font-display">{socialStats[1].value}</p>
-            <p className="mt-1 text-xs uppercase tracking-[0.3em] text-white/50">{socialStats[1].label}</p>
-          </div>
+        <div className="flex flex-wrap gap-3 sm:grid sm:grid-cols-3 sm:gap-6">
+          {socialStats.map((stat) => (
+            <div key={stat.label} className="min-w-[140px] flex-1 rounded-3xl border border-white/10 bg-white/5 p-4 text-center">
+              <p className="text-3xl font-display">{stat.value}</p>
+              <p className="text-xs uppercase tracking-[0.3em] text-white/60">{stat.label}</p>
+            </div>
+          ))}
         </div>
         <div className="space-y-6 rounded-4xl border border-white/10 bg-white/[0.02] p-8">
           <div className="flex items-center gap-3 text-fitcity">

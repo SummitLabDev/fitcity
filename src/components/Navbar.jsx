@@ -47,7 +47,7 @@ const Navbar = () => {
             alt="Fitcity Culemborg"
             className="h-12 w-auto rounded-2xl border border-white/10 bg-white/5 p-1 shadow-card"
           />
-          <div className="hidden sm:block">
+          <div>
             <p className="text-[11px] uppercase tracking-[0.4em] text-white/50">Fitcity</p>
             <p className="font-display text-base leading-tight">Culemborg</p>
           </div>
@@ -112,9 +112,10 @@ const Navbar = () => {
                   >
                     {primaryCta.label}
                   </Button>
-                  <p className="text-xs uppercase tracking-[0.35em] text-white/40">
-                    Dagelijks geopend 08:30 - 22:00
-                  </p>
+                  <div className="text-xs uppercase tracking-[0.35em] text-white/40">
+                    <p>Ma-vr 08:30 - 22:00</p>
+                    <p>Za 09:00 - 16:00 · Zo 09:30 - 16:00</p>
+                  </div>
                 </div>
               </Container>
             </motion.div>

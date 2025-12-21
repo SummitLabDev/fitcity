@@ -61,8 +61,16 @@ const Contact = () => {
     if (location.hash === '#proefles') {
       setReason('proefles');
     }
-    if (formRef.current && location.hash) {
-      formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (location.hash) {
+      const targetId = location.hash.replace('#', '');
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+      if (formRef.current) {
+        formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   }, [location.hash]);
 

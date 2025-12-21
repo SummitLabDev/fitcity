@@ -7,6 +7,9 @@ import Home from './pages/Home';
 import Pricing from './pages/Pricing';
 import LadiesOnly from './pages/LadiesOnly';
 import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Voorwaarden from './pages/Voorwaarden';
+import Cookiebeleid from './pages/Cookiebeleid';
 import AnimatedPage from './components/AnimatedPage';
 
 function App() {
@@ -25,6 +28,9 @@ function App() {
             <Route path="/abonnementen" element={<AnimatedPage><Pricing /></AnimatedPage>} />
             <Route path="/ladies-only" element={<AnimatedPage><LadiesOnly /></AnimatedPage>} />
             <Route path="/contact" element={<AnimatedPage><Contact /></AnimatedPage>} />
+            <Route path="/privacy" element={<AnimatedPage><Privacy /></AnimatedPage>} />
+            <Route path="/voorwaarden" element={<AnimatedPage><Voorwaarden /></AnimatedPage>} />
+            <Route path="/cookiebeleid" element={<AnimatedPage><Cookiebeleid /></AnimatedPage>} />
           </Routes>
         </AnimatePresence>
       </main>

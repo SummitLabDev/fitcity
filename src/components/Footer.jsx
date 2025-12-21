@@ -124,9 +124,9 @@ const Footer = () => {
         <div className="flex flex-col gap-4 border-t border-white/5 pt-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
           <p>&copy; {new Date().getFullYear()} Fitcity Culemborg. Alle rechten voorbehouden.</p>
           <div className="flex gap-6">
-            <Link to="#" className="hover:text-fitcity">Privacy</Link>
-            <Link to="#" className="hover:text-fitcity">Voorwaarden</Link>
-            <Link to="#" className="hover:text-fitcity">Cookiebeleid</Link>
+            <Link to="/privacy" className="hover:text-fitcity">Privacy</Link>
+            <Link to="/voorwaarden" className="hover:text-fitcity">Voorwaarden</Link>
+            <Link to="/cookiebeleid" className="hover:text-fitcity">Cookiebeleid</Link>
           </div>
         </div>
       </Container>

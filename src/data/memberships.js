@@ -14,7 +14,7 @@ const plans = [
   {
     id: 'duo-deal',
     name: 'Duo Deal',
-    price: 29.5,
+    price: 39.5,
     period: 'maand',
     description: 'Samen sporten met partner of familielid.',
     features: ['12 maanden onbeperkt fitness', '2 passen voor duo'],

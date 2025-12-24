@@ -39,7 +39,7 @@ const plans = [
     name: 'Ultimate Fit Deal',
     price: 37.5,
     period: 'maand',
-    description: 'Onbeperkt fitness en kickboksen in een membership.',
+    description: 'Onbeperkt fitness en kickboksen.',
     features: ['12 maanden toegang', 'Onbeperkt fitness', 'Onbeperkt (kick)boksen'],
     contractMonths: 12,
     includesKickboxing: true,

@@ -33,7 +33,7 @@ const LadiesOnly = () => {
           src="/FitCity%20ladies%20promoting%20fitness%20together.webp"
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: 'center 55%' }}
+          style={{ objectPosition: 'center 40%' }}
           loading="eager"
           decoding="async"
           sizes="100vw"

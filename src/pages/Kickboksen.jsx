@@ -57,16 +57,18 @@ const Kickboksen = () => {
                   </li>
                 ))}
               </ul>
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                 <Button
                   as={Link}
                   to={primaryCta.href}
-                  className="sm:min-w-[180px]"
+                  variant="ghost"
+                  size="lg"
+                  className="sm:min-w-[180px] justify-center border border-white/30 bg-white/10 backdrop-blur hover:border-fitcity/70 hover:bg-white/15"
                   data-tracking-id={primaryCta.trackingId}
                 >
                   {primaryCta.label}
                 </Button>
-                <Button as="a" href="#kickboxing-memberships" variant="ghost" className="sm:min-w-[180px] justify-center">
+                <Button as="a" href="#kickboxing-memberships" size="lg" className="sm:min-w-[180px] justify-center">
                   Bekijk abonnementen
                 </Button>
               </div>

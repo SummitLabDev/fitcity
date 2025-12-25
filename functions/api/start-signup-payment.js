@@ -77,7 +77,7 @@ export async function onRequestPost(context) {
 
     // Create Mollie payment
     const webhookToken = env.MOLLIE_WEBHOOK_TOKEN;
-    const baseUrl = env.APP_BASE_URL;
+    const baseUrl = env.APP_BASE_URL.replace(/\/+$/, ''); // Remove trailing slashes
 
     const payment = await createPayment(env.MOLLIE_API_KEY, {
       amount: formatMollieAmount(REGISTRATION_FEE),

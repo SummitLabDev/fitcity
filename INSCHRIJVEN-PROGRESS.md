@@ -312,3 +312,5 @@ Update 2025-12-25 22:04:02:
 - Prevented date/time overflow and normalized heights on contact form inputs.
 - Restyled confirmation email with FitCity colors, softer 'Let op', removed blocked logo image, and kept next steps/CTA.
 - Tweaked Summit Labs footer credit position and bold text.
+Update 2025-12-25 22:31:13:
+- Email template restyled with dark background tables and FitCity accents, but some clients still render a light background; needs further validation.

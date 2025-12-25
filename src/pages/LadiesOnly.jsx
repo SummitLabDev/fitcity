@@ -45,7 +45,7 @@ const LadiesOnly = () => {
             <div className="space-y-6 rounded-4xl border border-white/10 bg-black/60 p-6 text-white/85 backdrop-blur-md sm:p-8">
               <div className="space-y-3 text-white">
                 <p className="text-xs uppercase tracking-[0.4em] text-fitcity">Ladies Only</p>
-                <h1 className="text-3xl font-display sm:text-4xl lg:text-5xl">Een eigen plek om te groeien en te focussen</h1>
+                <h1 className="text-3xl font-display sm:text-4xl lg:text-5xl">Train in je eigen zone</h1>
                 <p className="text-base text-white/75">Ladies Only Zone wordt vergroot: meer ruimte en toestellen onderweg.</p>
               </div>
               <p className="text-base leading-relaxed text-white/85">

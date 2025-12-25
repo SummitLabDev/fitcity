@@ -128,6 +128,7 @@ const Footer = () => {
             <Link to="/voorwaarden" className="hover:text-fitcity">Voorwaarden</Link>
             <Link to="/cookiebeleid" className="hover:text-fitcity">Cookiebeleid</Link>
           </div>
+          <p className="text-center md:text-right">Gemaakt met 💪 door <a href="https://summitlab.dev" className="hover:text-fitcity" target="_blank" rel="noreferrer">Summit Labs</a></p>
         </div>
       </Container>
     </footer>

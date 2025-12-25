@@ -301,3 +301,5 @@ Update 2025-12-25 20:43:09:
 Update 2025-12-25 20:54:49:
 - Added timeout handling on /bedankt with contact+retry CTA and prefilled contact link using stored signup info and signup ID.
 - Contact form now accepts prefilled name/email/phone/message via query params (used by thank-you fallback).
+Update 2025-12-25 21:03:36:
+- Adjusted /bedankt polling cadence: every 1s for first 10s, then every 7s until timeout/terminal status.

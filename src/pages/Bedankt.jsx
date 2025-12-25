@@ -64,33 +64,30 @@ const Bedankt = () => {
     let isActive = true;
     const start = Date.now();
 
-    const runPoll = async () => {
+    const schedulePoll = async () => {
       const newStatus = await fetchStatus();
       if (!isActive) return;
       if (isTerminal(newStatus)) {
-        clearInterval(pollTimerRef.current);
+        if (pollTimerRef.current) clearTimeout(pollTimerRef.current);
         return;
       }
+
       const elapsed = Date.now() - start;
       if (elapsed > POLL_TIMEOUT_MS) {
         setStatus('timeout');
-        clearInterval(pollTimerRef.current);
-      }
-    };
-
-    runPoll();
-    pollTimerRef.current = setInterval(() => {
-      const elapsed = Date.now() - start;
-      if (elapsed > POLL_TIMEOUT_MS) {
-        clearInterval(pollTimerRef.current);
+        if (pollTimerRef.current) clearTimeout(pollTimerRef.current);
         return;
       }
-      runPoll();
-    }, POLL_INTERVAL_MS);
+
+      const nextDelay = elapsed < 10_000 ? 1000 : POLL_INTERVAL_MS;
+      pollTimerRef.current = setTimeout(schedulePoll, nextDelay);
+    };
+
+    schedulePoll();
 
     return () => {
       isActive = false;
-      if (pollTimerRef.current) clearInterval(pollTimerRef.current);
+      if (pollTimerRef.current) clearTimeout(pollTimerRef.current);
     };
   }, [signupId]);
 

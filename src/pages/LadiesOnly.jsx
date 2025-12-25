@@ -67,17 +67,6 @@ const LadiesOnly = () => {
               </ul>
               <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                 <Button
-                  as={Link}
-                  to={primaryCta.href}
-                  className="sm:min-w-[180px]"
-                  data-tracking-id={primaryCta.trackingId}
-                >
-                  {primaryCta.label}
-                </Button>
-                <Button as="a" href="#ladies-memberships" variant="ghost" className="sm:min-w-[180px] justify-center">
-                  Bekijk abonnementen
-                </Button>
-                <Button
                   variant="ghost"
                   size="lg"
                   icon={Play}
@@ -85,6 +74,9 @@ const LadiesOnly = () => {
                   onClick={() => setShowVideo(true)}
                 >
                   Bekijk ladies only
+                </Button>
+                <Button as="a" href="#ladies-memberships" className="sm:min-w-[180px] justify-center">
+                  Bekijk abonnementen
                 </Button>
               </div>
             </div>

@@ -92,8 +92,8 @@ const Home = () => {
         </div>
         <div className="overflow-hidden rounded-3xl border border-white/10">
           <img
-            src="/fitcity_groepsles.webp"
-            alt="Sfeerimpressie groepsles"
+            src="/omgeving-cardio.webp"
+            alt="Cardiozaal met leden in training"
             className="h-full w-full object-cover"
             loading="lazy"
             decoding="async"

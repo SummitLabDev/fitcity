@@ -151,7 +151,7 @@ const Home = () => {
       >
         <div className="space-y-6">
           <p className="text-white/70">
-            Techniek en conditie in kleine groepen. Kids (vanaf 6 jaar) en volwassenen hebben vaste lesmomenten. Rooster, prijzen en proeflesopties staan op de kickboksen pagina.
+            Kickboksen in kleine groepen met focus op techniek en conditie. Kids (vanaf 6 jaar) en volwassenen trainen op vaste tijden. Bekijk het rooster, tarieven en proeflesmogelijkheden.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button as={Link} to="/kickboksen" className="w-full justify-center">

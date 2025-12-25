@@ -10,6 +10,7 @@ const Input = ({
   ...props
 }) => {
   const inputId = id || props.name;
+  const typeClasses = type === 'date' ? 'h-12' : '';
 
   return (
     <div className={clsx('flex flex-col gap-1.5', className)}>
@@ -27,6 +28,7 @@ const Input = ({
         type={type}
         className={clsx(
           'w-full min-w-0 appearance-none rounded-xl border bg-white/5 px-4 py-3 text-white placeholder:text-white/40',
+          typeClasses,
           'transition-all duration-200',
           'focus:outline-none focus:ring-2 focus:ring-fitcity/60',
           error

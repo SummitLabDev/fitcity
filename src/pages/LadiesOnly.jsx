@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Sparkles, Heart, Users, Shield, Play, Facebook, Instagram } from 'lucide-react';
 import Section from '../components/Section';
+import Container from '../components/Container';
 import PlanCard from '../components/PlanCard';
 import Button from '../components/ui/Button';
 import CtaStrip from '../components/CtaStrip';
@@ -27,72 +28,69 @@ const LadiesOnly = () => {
 
   return (
     <>
-      <Section
-        header={{
-          eyebrow: 'Ladies Only',
-          title: 'Een eigen plek om te groeien en te focussen',
-          subtitle: 'Ladies Only Zone wordt vergroot: meer ruimte en toestellen onderweg.',
-          align: 'left',
-        }}
-        contentClassName="grid items-center gap-10 lg:grid-cols-2"
-      >
-        <div className="space-y-6 text-white/70 lg:max-w-xl">
-          <p className="text-base leading-relaxed">
-            Hier train je samen met andere vrouwen in een afgesloten ruimte met eigen apparatuur. Kies je eigen tempo en mix kracht met cardio.
-          </p>
-          <ul className="space-y-3 text-sm">
-            <li className="flex items-start gap-3">
-              <span className="mt-1 inline-block h-1 w-4 rounded-full bg-fitcity" aria-hidden="true" />
-              Afgesloten ladies only verdieping binnen de club
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="mt-1 inline-block h-1 w-4 rounded-full bg-fitcity" aria-hidden="true" />
-              Meer vloeroppervlak en toestellen in aanbouw
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="mt-1 inline-block h-1 w-4 rounded-full bg-fitcity" aria-hidden="true" />
-              Volledig focussen zonder inkijk van de fitnessvloer
-            </li>
-          </ul>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button
-              as={Link}
-              to={primaryCta.href}
-              className="sm:min-w-[180px]"
-              data-tracking-id={primaryCta.trackingId}
-            >
-              {primaryCta.label}
-            </Button>
-            <Button as="a" href="#ladies-memberships" variant="ghost" className="sm:min-w-[180px] justify-center">
-              Bekijk abonnementen
-            </Button>
-          </div>
-        </div>
-        <div className="relative overflow-hidden rounded-4xl border border-white/10">
-          <img
-            src="/FitCity%20ladies%20promoting%20fitness%20together.webp"
-            alt="Ladies only sfeer"
-            className="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-            sizes="(min-width: 1024px) 50vw, 100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-          <div className="absolute inset-0 flex items-end justify-center">
-            <div className="p-6">
-              <Button
-                variant="ghost"
-                size="lg"
-                icon={Play}
-                className="justify-center border border-white/30 bg-white/10 backdrop-blur hover:border-fitcity/70 hover:bg-white/15"
-                onClick={() => setShowVideo(true)}
-              >
-                Bekijk ladies only
-              </Button>
+      <section className="relative overflow-hidden">
+        <img
+          src="/FitCity%20ladies%20promoting%20fitness%20together.webp"
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: 'center 55%' }}
+          loading="eager"
+          decoding="async"
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" aria-hidden="true" />
+        <Container className="relative z-10 py-16 md:py-24">
+          <div className="max-w-4xl">
+            <div className="space-y-6 rounded-4xl border border-white/10 bg-black/60 p-6 text-white/85 backdrop-blur-md sm:p-8">
+              <div className="space-y-3 text-white">
+                <p className="text-xs uppercase tracking-[0.4em] text-fitcity">Ladies Only</p>
+                <h1 className="text-3xl font-display sm:text-4xl lg:text-5xl">Een eigen plek om te groeien en te focussen</h1>
+                <p className="text-base text-white/75">Ladies Only Zone wordt vergroot: meer ruimte en toestellen onderweg.</p>
+              </div>
+              <p className="text-base leading-relaxed text-white/85">
+                Hier train je samen met andere vrouwen in een afgesloten ruimte met eigen apparatuur. Kies je eigen tempo en mix kracht met cardio.
+              </p>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 inline-block h-1 w-4 rounded-full bg-fitcity" aria-hidden="true" />
+                  Afgesloten ladies only verdieping binnen de club
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 inline-block h-1 w-4 rounded-full bg-fitcity" aria-hidden="true" />
+                  Meer vloeroppervlak en toestellen in aanbouw
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 inline-block h-1 w-4 rounded-full bg-fitcity" aria-hidden="true" />
+                  Volledig focussen zonder inkijk van de fitnessvloer
+                </li>
+              </ul>
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                <Button
+                  as={Link}
+                  to={primaryCta.href}
+                  className="sm:min-w-[180px]"
+                  data-tracking-id={primaryCta.trackingId}
+                >
+                  {primaryCta.label}
+                </Button>
+                <Button as="a" href="#ladies-memberships" variant="ghost" className="sm:min-w-[180px] justify-center">
+                  Bekijk abonnementen
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  icon={Play}
+                  className="justify-center border border-white/30 bg-white/10 backdrop-blur hover:border-fitcity/70 hover:bg-white/15"
+                  onClick={() => setShowVideo(true)}
+                >
+                  Bekijk ladies only
+                </Button>
+              </div>
             </div>
           </div>
-        </div>
-      </Section>
+        </Container>
+      </section>
 
       <Section
         tone="overlay"

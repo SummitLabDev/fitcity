@@ -75,18 +75,16 @@ const Contact = () => {
       setReason('proefles');
     }
 
-    const scrollToForm = () => {
+    const hasParams = Array.from(params.keys()).length > 0;
+    if (location.hash || hasParams) {
       const targetId = (location.hash && location.hash.replace('#', '')) || 'contact-form';
       const targetElement = document.getElementById(targetId);
       if (targetElement) {
         targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        return;
-      }
-      if (formRef.current) {
+      } else if (formRef.current) {
         formRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-    };
-    scrollToForm();
+    }
   }, [location.hash, location.search]);
 
   return (

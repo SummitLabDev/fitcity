@@ -134,13 +134,13 @@ const Hero = () => {
                     <div
                       key={item.day}
                       className={clsx(
-                        'flex items-center justify-between rounded-2xl border px-3 py-2',
+                        'flex items-center justify-between rounded-2xl border px-3 py-2 text-white',
                         item.day.toLowerCase() === todayKey
-                          ? 'border-fitcity/70 bg-fitcity/10 text-fitcity'
-                          : 'border-white/5 bg-white/[0.03] text-white'
+                          ? 'border-fitcity/30 bg-white/[0.05]'
+                          : 'border-white/5 bg-white/[0.03]'
                       )}
                     >
-                      <span className="font-semibold">{item.day}</span>
+                      <span className={clsx('font-semibold', item.day.toLowerCase() === todayKey ? 'text-fitcity' : '')}>{item.day}</span>
                       <span className="text-white/80">{item.status}</span>
                     </div>
                   ))}

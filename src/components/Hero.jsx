@@ -136,9 +136,16 @@ const Hero = () => {
                         key={item.day}
                         className="flex items-center justify-between gap-3"
                       >
-                        <span className="inline-flex items-center gap-1">
-                          {isToday && <span className="h-1.5 w-1.5 rounded-full bg-fitcity" aria-label="Vandaag" />}
-                          {item.day}
+                        <span className="relative inline-flex items-center">
+                          {isToday && (
+                            <span
+                              aria-hidden="true"
+                              className="absolute inset-x-[-3px] top-1/2 h-3 -translate-y-1/2 rounded bg-fitcity/20"
+                            />
+                          )}
+                          <span className={isToday ? 'relative font-semibold text-white' : 'relative font-semibold'}>
+                            {item.day}
+                          </span>
                         </span>
                         <span className="text-white/70">{item.status}</span>
                       </div>

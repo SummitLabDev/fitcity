@@ -145,7 +145,7 @@ const Home = () => {
         header={{
           eyebrow: 'Kickboksen',
           title: 'Kickboksen voor kids en volwassenen',
-          subtitle: 'Bekijk alle info, rooster en memberships op de kickboksen pagina.',
+          subtitle: 'Rooster, prijzen en proeflesinfo in één overzicht.',
         }}
         contentClassName="grid gap-8 lg:grid-cols-2"
       >
@@ -155,7 +155,7 @@ const Home = () => {
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button as={Link} to="/kickboksen" className="w-full justify-center">
-              Naar kickboksen pagina
+              Meer informatie
             </Button>
             <Button as={Link} to="/contact#proefles" variant="ghost" className="w-full justify-center">
               Plan een proefles

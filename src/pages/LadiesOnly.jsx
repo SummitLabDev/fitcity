@@ -70,12 +70,12 @@ const LadiesOnly = () => {
                   variant="ghost"
                   size="lg"
                   icon={Play}
-                  className="justify-center border border-white/30 bg-white/10 backdrop-blur hover:border-fitcity/70 hover:bg-white/15"
+                  className="sm:min-w-[180px] justify-center border border-white/30 bg-white/10 backdrop-blur hover:border-fitcity/70 hover:bg-white/15"
                   onClick={() => setShowVideo(true)}
                 >
                   Bekijk ladies only
                 </Button>
-                <Button as="a" href="#ladies-memberships" className="sm:min-w-[180px] justify-center">
+                <Button as="a" href="#ladies-memberships" size="lg" className="sm:min-w-[180px] justify-center">
                   Bekijk abonnementen
                 </Button>
               </div>
@@ -86,7 +86,7 @@ const LadiesOnly = () => {
 
       <Section
         tone="overlay"
-        header={{ eyebrow: 'Waarom Ladies Only', title: 'Alles wat je nodig hebt op één plek' }}
+        header={{ eyebrow: 'Waarom Ladies Only', title: 'Alles wat je nodig hebt op een plek' }}
         contentClassName="grid gap-6 md:grid-cols-3 lg:grid-cols-4"
       >
         {features.map(({ icon: Icon, title, copy }) => (

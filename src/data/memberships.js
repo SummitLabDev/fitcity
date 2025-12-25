@@ -10,6 +10,7 @@ const plans = [
     includesKickboxing: false,
     isLadiesOnly: false,
     mostPopular: true,
+    signupEligible: true,
   },
   {
     id: 'duo-deal',
@@ -21,6 +22,7 @@ const plans = [
     contractMonths: 12,
     includesKickboxing: false,
     isLadiesOnly: false,
+    signupEligible: true,
   },
   {
     id: 'ladies-jaar-deal',
@@ -33,6 +35,7 @@ const plans = [
     includesKickboxing: false,
     isLadiesOnly: true,
     mostPopular: true,
+    signupEligible: true,
   },
   {
     id: 'ultimate-fit',
@@ -44,6 +47,7 @@ const plans = [
     contractMonths: 12,
     includesKickboxing: true,
     isLadiesOnly: false,
+    signupEligible: true,
   },
   {
     id: 'kickboxing-weekly',
@@ -55,6 +59,7 @@ const plans = [
     contractMonths: 12,
     includesKickboxing: true,
     isLadiesOnly: false,
+    signupEligible: true,
   },
   {
     id: 'kickboxing-unlimited',
@@ -66,6 +71,7 @@ const plans = [
     contractMonths: 12,
     includesKickboxing: true,
     isLadiesOnly: false,
+    signupEligible: true,
   },
   {
     id: 'fit-deal-halfjaar',
@@ -77,6 +83,7 @@ const plans = [
     contractMonths: 6,
     includesKickboxing: false,
     isLadiesOnly: false,
+    signupEligible: true,
   },
   {
     id: 'ladies-halfjaar',
@@ -88,6 +95,7 @@ const plans = [
     contractMonths: 6,
     includesKickboxing: false,
     isLadiesOnly: true,
+    signupEligible: true,
   },
   {
     id: 'quick-deal-3mnd',
@@ -99,6 +107,7 @@ const plans = [
     contractMonths: 3,
     includesKickboxing: false,
     isLadiesOnly: false,
+    signupEligible: false, // One-time payment, not recurring subscription
   },
   {
     id: 'maand-flex',
@@ -110,6 +119,7 @@ const plans = [
     contractMonths: 1,
     includesKickboxing: false,
     isLadiesOnly: false,
+    signupEligible: true,
   },
   {
     id: 'ladies-flex',
@@ -121,6 +131,7 @@ const plans = [
     contractMonths: 1,
     includesKickboxing: false,
     isLadiesOnly: true,
+    signupEligible: true,
   },
   {
     id: 'dagpas',
@@ -131,6 +142,7 @@ const plans = [
     features: ['Alle faciliteiten op 1 dag', 'Geen verplichtingen'],
     includesKickboxing: false,
     isLadiesOnly: false,
+    signupEligible: false, // Day pass, not a subscription
   },
 ];
 

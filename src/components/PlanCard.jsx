@@ -10,6 +10,12 @@ const PlanCard = ({ plan, isMostPopular = false }) => {
     typeof plan.price === 'number' ? formatPrice(plan.price) : plan.priceText ?? 'Op aanvraag';
   const periodLabel = plan.period ? `${plan.periodPrefix ?? '/'} ${plan.period}`.trim() : '';
 
+  // Link to signup for eligible plans, contact for others
+  const ctaLink = plan.signupEligible !== false
+    ? `/inschrijven?plan=${plan.id}`
+    : '/contact';
+  const ctaText = plan.signupEligible !== false ? 'Kies dit plan' : 'Neem contact op';
+
   return (
     <motion.div
       initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
@@ -49,8 +55,8 @@ const PlanCard = ({ plan, isMostPopular = false }) => {
       </ul>
 
       <div className="mt-auto pt-8">
-        <Button as={Link} to="/contact" variant={isMostPopular ? 'primary' : 'ghost'} className="w-full justify-center">
-          Kies dit plan
+        <Button as={Link} to={ctaLink} variant={isMostPopular ? 'primary' : 'ghost'} className="w-full justify-center">
+          {ctaText}
         </Button>
       </div>
     </motion.div>

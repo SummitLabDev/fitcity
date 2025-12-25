@@ -11,6 +11,8 @@ import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Voorwaarden from './pages/Voorwaarden';
 import Cookiebeleid from './pages/Cookiebeleid';
+import Inschrijven from './pages/Inschrijven';
+import Bedankt from './pages/Bedankt';
 import AnimatedPage from './components/AnimatedPage';
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
             <Route path="/privacy" element={<AnimatedPage><Privacy /></AnimatedPage>} />
             <Route path="/voorwaarden" element={<AnimatedPage><Voorwaarden /></AnimatedPage>} />
             <Route path="/cookiebeleid" element={<AnimatedPage><Cookiebeleid /></AnimatedPage>} />
+            <Route path="/inschrijven" element={<Inschrijven />} />
+            <Route path="/bedankt" element={<Bedankt />} />
           </Routes>
         </AnimatePresence>
       </main>

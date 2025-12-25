@@ -1,0 +1,12 @@
+# Cloudflare Pages configuration for FitCity
+# This file configures the Pages Functions and D1 database binding
+
+name = "fitcity"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "fitcity-signups"
+database_id = "2e1e45a8-4cde-4c00-98b9-b0aaaa043758"

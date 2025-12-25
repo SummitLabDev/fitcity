@@ -314,3 +314,7 @@ Update 2025-12-25 22:04:02:
 - Tweaked Summit Labs footer credit position and bold text.
 Update 2025-12-25 22:31:13:
 - Email template restyled with dark background tables and FitCity accents, but some clients still render a light background; needs further validation.
+Update 2025-12-25 23:15:00:
+- Fixed iOS Mail dark background: replaced all rgba() colors with solid hex (iOS Mail doesn't support rgba).
+- Added bgcolor attribute to every table cell for maximum client compatibility.
+- Added border-radius to inner td elements so rounded corners clip properly on iOS Mail.

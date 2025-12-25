@@ -125,7 +125,7 @@ const Home = () => {
         header={{
           eyebrow: 'Abonnementen',
           title: 'Flexibele memberships zonder kleine lettertjes',
-          subtitle: 'Kies het lidmaatschap dat past bij jouw doelen. Kickboksen kan los of gecombineerd met fitness.',
+          subtitle: 'Kies het lidmaatschap dat past bij jouw doelen.',
         }}
         contentClassName="grid gap-6 md:grid-cols-3 lg:grid-cols-3"
         disableReveal
@@ -145,7 +145,7 @@ const Home = () => {
         header={{
           eyebrow: 'Kickboksen',
           title: 'Kickboksen voor kids en volwassenen',
-          subtitle: 'Ontdek hoe we techniek, conditie en plezier combineren in lessen voor zowel kids als volwassenen.',
+          subtitle: 'Ontdek hoe we techniek, conditie en plezier combineren in lessen voor kids en volwassenen.',
         }}
         contentClassName="grid gap-8 lg:grid-cols-2"
       >

@@ -97,7 +97,7 @@ function generateConfirmationEmailHtml(signup) {
               <!-- Membership details box -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${bgCardInner}" style="background-color:${bgCardInner};border:1px solid ${borderColor};border-radius:12px;margin:0 0 14px 0;">
                 <tr>
-                  <td bgcolor="${bgCardInner}" style="padding:14px;background-color:${bgCardInner};">
+                  <td bgcolor="${bgCardInner}" style="padding:14px;background-color:${bgCardInner};border-radius:11px;">
                     <h2 style="font-size:15px;color:${accent};margin:0 0 10px 0;font-weight:600;">Jouw abonnement</h2>
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:14px;">
                       <tr>
@@ -120,7 +120,7 @@ function generateConfirmationEmailHtml(signup) {
               <!-- Warning box -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${bgWarning}" style="background-color:${bgWarning};border:1px solid ${accent};border-radius:12px;margin:0 0 14px 0;">
                 <tr>
-                  <td bgcolor="${bgWarning}" style="padding:12px;background-color:${bgWarning};">
+                  <td bgcolor="${bgWarning}" style="padding:12px;background-color:${bgWarning};border-radius:11px;">
                     <p style="margin:0;font-size:14px;color:${accent};"><strong>Let op:</strong> Vanaf je startdatum worden de abonnementskosten maandelijks automatisch ge&#239;ncasseerd via SEPA automatische incasso.</p>
                   </td>
                 </tr>
@@ -129,7 +129,7 @@ function generateConfirmationEmailHtml(signup) {
               <!-- Next steps box -->
               <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${bgCardInner}" style="background-color:${bgCardInner};border:1px solid ${borderColor};border-radius:12px;margin:0 0 14px 0;">
                 <tr>
-                  <td bgcolor="${bgCardInner}" style="padding:14px;background-color:${bgCardInner};">
+                  <td bgcolor="${bgCardInner}" style="padding:14px;background-color:${bgCardInner};border-radius:11px;">
                     <h2 style="font-size:15px;color:${accent};margin:0 0 8px 0;font-weight:600;">Volgende stappen</h2>
                     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="font-size:14px;color:${textPrimary};">
                       <tr>

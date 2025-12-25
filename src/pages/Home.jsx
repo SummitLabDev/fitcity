@@ -141,6 +141,42 @@ const Home = () => {
       </Section>
 
       <Section
+        tone="panel"
+        header={{
+          eyebrow: 'Kickboksen',
+          title: 'Kickboksen voor kids en volwassenen',
+          subtitle: 'Bekijk alle info, rooster en memberships op de kickboksen pagina.',
+        }}
+        contentClassName="grid gap-8 lg:grid-cols-2"
+      >
+        <div className="space-y-6">
+          <p className="text-white/70">
+            Techniek, conditie en sparren op afspraak. Kids (vanaf 6 jaar) en volwassenen trainen op vaste momenten. Alles over het rooster en de deals vind je op de kickboksen pagina.
+          </p>
+          <div className="flex flex-col gap-3 sm:flex-row">
+            <Button as={Link} to="/kickboksen" className="w-full justify-center">
+              Naar kickboksen pagina
+            </Button>
+            <Button as={Link} to="/contact#proefles" variant="ghost" className="w-full justify-center">
+              Plan een proefles
+            </Button>
+          </div>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {kickboxingCards.map((item) => (
+            <Link
+              key={item.title}
+              to={item.to}
+              className="group relative overflow-hidden rounded-4xl border border-white/10 transition-colors hover:border-fitcity/30"
+            >
+              <img src={item.image} alt={item.title} className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+            </Link>
+          ))}
+        </div>
+      </Section>
+
+      <Section
         header={{
           eyebrow: 'Community',
           title: 'Samen fit worden en blijven',
@@ -174,42 +210,6 @@ const Home = () => {
             <p className="font-semibold">Vienna</p>
             <p className="text-sm text-white/50">5/5 Google review</p>
           </div>
-        </div>
-      </Section>
-
-      <Section
-        tone="panel"
-        header={{
-          eyebrow: 'Kickboksen',
-          title: 'Kickboksen voor kids en volwassenen',
-          subtitle: 'Bekijk alle info, rooster en memberships op de kickboksen pagina.',
-        }}
-        contentClassName="grid gap-8 lg:grid-cols-2"
-      >
-        <div className="space-y-6">
-          <p className="text-white/70">
-            Techniek, conditie en sparren op afspraak. Kids (vanaf 6 jaar) en volwassenen trainen op vaste momenten. Alles over het rooster en de deals vind je op de kickboksen pagina.
-          </p>
-          <div className="flex flex-col gap-3 sm:flex-row">
-            <Button as={Link} to="/kickboksen" className="w-full justify-center">
-              Naar kickboksen pagina
-            </Button>
-            <Button as={Link} to="/contact#proefles" variant="ghost" className="w-full justify-center">
-              Plan een proefles
-            </Button>
-          </div>
-        </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {kickboxingCards.map((item) => (
-            <Link
-              key={item.title}
-              to={item.to}
-              className="group relative overflow-hidden rounded-4xl border border-white/10 transition-colors hover:border-fitcity/30"
-            >
-              <img src={item.image} alt={item.title} className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-            </Link>
-          ))}
         </div>
       </Section>
 

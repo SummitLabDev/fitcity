@@ -151,11 +151,11 @@ const Home = () => {
       >
         <div className="space-y-6">
           <p className="text-white/70">
-            Techniek, conditie en sparren op afspraak. Kids (vanaf 6 jaar) en volwassenen trainen op vaste momenten. Alles over het rooster en de deals vind je op de kickboksen pagina.
+            Techniek en conditie in kleine groepen. Kids (vanaf 6 jaar) en volwassenen hebben vaste lesmomenten. Rooster, prijzen en proeflesopties staan op de kickboksen pagina.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button as={Link} to="/kickboksen" className="w-full justify-center">
-              Meer informatie
+              Rooster & info
             </Button>
             <Button as={Link} to="/contact#proefles" variant="ghost" className="w-full justify-center">
               Plan een proefles

@@ -47,10 +47,6 @@ function generateConfirmationEmailHtml(signup) {
     <div style="background:#0f1117;border-radius:18px;padding:24px 18px;box-shadow:0 8px 32px rgba(0,0,0,0.25);">
 
       <div style="text-align:center;margin-bottom:18px;">
-        <img src="${logoUrl}" alt="FitCity Culemborg" style="height:56px;width:auto;max-width:160px;" />
-      </div>
-
-      <div style="text-align:center;margin-bottom:18px;">
         <h1 style="color:#ffe500;font-size:22px;margin:0 0 6px 0;">Welkom bij FitCity!</h1>
         <p style="color:rgba(229,231,235,0.75);margin:0;">Je inschrijving is bevestigd</p>
       </div>

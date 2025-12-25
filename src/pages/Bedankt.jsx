@@ -12,6 +12,7 @@ const Bedankt = () => {
   const [status, setStatus] = useState('loading');
   const [lastChecked, setLastChecked] = useState(null);
   const pollTimerRef = useRef(null);
+  const redirectTimerRef = useRef(null);
   const [contactHref, setContactHref] = useState('/contact');
   const POLL_INTERVAL_MS = 7000;
   const POLL_TIMEOUT_MS = 90000;
@@ -88,6 +89,7 @@ const Bedankt = () => {
     return () => {
       isActive = false;
       if (pollTimerRef.current) clearTimeout(pollTimerRef.current);
+      if (redirectTimerRef.current) clearTimeout(redirectTimerRef.current);
     };
   }, [signupId]);
 
@@ -114,9 +116,23 @@ const Bedankt = () => {
     if (stored?.startDate) message += ` Startdatum: ${stored.startDate}.`;
     message += ' Kunnen jullie helpen?';
     params.set('message', message);
+    if (isFailed) {
+      params.set('alert', 'payment-timeout');
+    }
 
     setContactHref(`/contact?${params.toString()}`);
-  }, [signupId, status]);
+  }, [signupId, status, isFailed]);
+
+  useEffect(() => {
+    if (status !== 'timeout') return;
+    if (!contactHref) return;
+    redirectTimerRef.current = setTimeout(() => {
+      window.location.href = contactHref;
+    }, 3000);
+    return () => {
+      if (redirectTimerRef.current) clearTimeout(redirectTimerRef.current);
+    };
+  }, [status, contactHref]);
 
   return (
     <AnimatedPage>
@@ -172,7 +188,7 @@ const Bedankt = () => {
             )}
             {status === 'timeout' && (
               <p className="mt-2 text-sm text-white/50">
-                We kunnen de betaling niet bevestigen. Probeer opnieuw of neem contact op.
+                We kunnen de betaling niet bevestigen. Probeer opnieuw of neem contact op. Je wordt zo doorgestuurd.
               </p>
             )}
 

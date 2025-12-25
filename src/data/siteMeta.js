@@ -2,7 +2,6 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { openingHoursInline } from './facilityInfo';
 
 const navItems = [
-  { label: 'Home', to: '/' },
   { label: 'Ladies Only', to: '/ladies-only' },
   { label: 'Kickboksen', to: '/kickboksen' },
   { label: 'Abonnementen', to: '/abonnementen' },

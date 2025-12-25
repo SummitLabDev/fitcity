@@ -15,7 +15,7 @@ const Voorwaarden = () => {
         disableReveal
       >
         <div className="rounded-4xl border border-white/10 bg-white/[0.02] p-8 text-sm text-white/70">
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Laatst bijgewerkt: 21 december 2025</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Laatst bijgewerkt: 25 december 2025</p>
         </div>
 
         <div className="space-y-8 rounded-4xl border border-white/10 bg-white/[0.03] p-8 text-sm text-white/70">
@@ -31,12 +31,14 @@ const Voorwaarden = () => {
 
           <div className="space-y-3">
             <h3 className="text-xl font-display text-white">3. Lidmaatschap en overeenkomst</h3>
-            <p>Wanneer je een lidmaatschap afsluit, gelden de afspraken uit jouw overeenkomst. Deze voorwaarden vullen die overeenkomst aan waar nodig.</p>
+            <p>Wanneer je een lidmaatschap afsluit (in de club of via de pagina Inschrijven), gelden de afspraken uit jouw overeenkomst. Deze voorwaarden vullen die overeenkomst aan waar nodig.</p>
+            <p>Bij online inschrijven kies je zelf de startdatum. De eerste incasso wordt op of rond die gekozen startdatum uitgevoerd.</p>
           </div>
 
           <div className="space-y-3">
             <h3 className="text-xl font-display text-white">4. Betaling</h3>
-            <p>Betaling verloopt via de afgesproken betaalmethode. De hoogte en de looptijd van de kosten zijn vastgelegd in de overeenkomst. Bij achterstallige betaling kunnen we toegang tot de faciliteiten tijdelijk beperken.</p>
+            <p>Betaling verloopt via de afgesproken betaalmethode. Online betalingen worden afgehandeld door Mollie; wij ontvangen geen volledige kaartgegevens en verwerken bankgegevens niet zelf. Via Mollie zien we betaalstatus en beperkte betaalgegevens (zoals naam rekeninghouder, IBAN en tijdstip) voor administratie.</p>
+            <p>De hoogte en de looptijd van de kosten zijn vastgelegd in de overeenkomst. Bij achterstallige betaling kunnen we toegang tot de faciliteiten tijdelijk beperken.</p>
           </div>
 
           <div className="space-y-3">

@@ -15,7 +15,7 @@ const Cookiebeleid = () => {
         disableReveal
       >
         <div className="rounded-4xl border border-white/10 bg-white/[0.02] p-8 text-sm text-white/70">
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Laatst bijgewerkt: 21 december 2025</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Laatst bijgewerkt: 25 december 2025</p>
         </div>
 
         <div className="space-y-8 rounded-4xl border border-white/10 bg-white/[0.03] p-8 text-sm text-white/70">
@@ -37,6 +37,7 @@ const Cookiebeleid = () => {
           <div className="space-y-3">
             <h3 className="text-xl font-display text-white">3. Cookies van derden</h3>
             <p>Wanneer je een kaart of andere externe content bekijkt, kan de aanbieder cookies plaatsen. Op de verwerking daarvan zijn de privacy- en cookieverklaringen van die partijen van toepassing, zoals die van Google.</p>
+            <p>Voor online betalingen maken we gebruik van Mollie. Tijdens het betaalproces kunnen hun noodzakelijke cookies of vergelijkbare technieken worden geplaatst; raadpleeg het privacy- en cookiebeleid van Mollie voor meer informatie.</p>
           </div>
 
           <div className="space-y-3">

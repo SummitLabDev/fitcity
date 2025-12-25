@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import clsx from 'clsx';
 import { useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, Loader2 } from 'lucide-react';
@@ -9,10 +10,39 @@ import StepIndicator from '../components/signup/StepIndicator';
 import MembershipSelector from '../components/signup/MembershipSelector';
 import DateStep from '../components/signup/DateStep';
 import PersonalInfoForm from '../components/signup/PersonalInfoForm';
-import { plans } from '../data/memberships';
+import { plans, planGroups } from '../data/memberships';
 
 // Filter to only show signup-eligible plans
 const signupPlans = plans.filter((p) => p.signupEligible !== false);
+
+// Group only signup-eligible plans for category tabs
+const signupPlanGroups = planGroups
+  .map((group) => ({
+    ...group,
+    plans: group.plans.filter((plan) => plan && plan.signupEligible !== false),
+  }))
+  .filter((group) => group.plans.length > 0);
+
+const findCategoryForPlan = (planId) => {
+  const plan = signupPlans.find((p) => p.id === planId);
+  if (!plan) return null;
+
+  // Prefer specific buckets first
+  if (plan.isLadiesOnly && signupPlanGroups.some((g) => g.key === 'ladies-only')) {
+    return 'ladies-only';
+  }
+  if (plan.includesKickboxing && signupPlanGroups.some((g) => g.key === 'kickboxing')) {
+    return 'kickboxing';
+  }
+
+  const matchedGroup = signupPlanGroups.find((group) =>
+    group.plans.some((p) => p.id === planId)
+  );
+
+  return matchedGroup?.key ?? null;
+};
+
+const defaultCategoryKey = signupPlanGroups[0]?.key ?? '';
 
 const INITIAL_FORM_DATA = {
   membershipId: '',
@@ -33,6 +63,10 @@ const INITIAL_FORM_DATA = {
 const Inschrijven = () => {
   const [searchParams] = useSearchParams();
   const [step, setStep] = useState(1);
+  const [activeCategory, setActiveCategory] = useState(() => {
+    const planId = searchParams.get('plan');
+    return (planId && findCategoryForPlan(planId)) || defaultCategoryKey;
+  });
   const [formData, setFormData] = useState(INITIAL_FORM_DATA);
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,10 +77,17 @@ const Inschrijven = () => {
     const planId = searchParams.get('plan');
     if (planId && signupPlans.some((p) => p.id === planId)) {
       setFormData((prev) => ({ ...prev, membershipId: planId }));
+      const category = findCategoryForPlan(planId);
+      if (category) {
+        setActiveCategory(category);
+      }
     }
   }, [searchParams]);
 
   const selectedPlan = signupPlans.find((p) => p.id === formData.membershipId);
+  const activeGroup =
+    signupPlanGroups.find((group) => group.key === activeCategory) ?? signupPlanGroups[0];
+  const visiblePlans = activeGroup?.plans ?? signupPlans;
 
   const updateFormData = (field, value) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
@@ -190,8 +231,35 @@ const Inschrijven = () => {
                     Selecteer het abonnement dat bij jou past.
                   </p>
                 </div>
+                <div className="space-y-3">
+                  <div className="flex flex-wrap justify-center gap-2">
+                    {signupPlanGroups.map((group) => {
+                      const isActive = group.key === activeCategory;
+                      return (
+                        <button
+                          key={group.key}
+                          type="button"
+                          onClick={() => setActiveCategory(group.key)}
+                          className={clsx(
+                            'rounded-full border px-4 py-2 text-sm font-medium transition',
+                            isActive
+                              ? 'border-fitcity bg-fitcity/20 text-white'
+                              : 'border-white/10 bg-white/[0.04] text-white/70 hover:border-white/30 hover:text-white'
+                          )}
+                        >
+                          {group.label}
+                        </button>
+                      );
+                    })}
+                  </div>
+                  {activeGroup?.description && (
+                    <p className="text-center text-sm text-white/60">
+                      {activeGroup.description}
+                    </p>
+                  )}
+                </div>
                 <MembershipSelector
-                  plans={signupPlans}
+                  plans={visiblePlans}
                   selectedId={formData.membershipId}
                   onSelect={(id) => updateFormData('membershipId', id)}
                 />
@@ -227,7 +295,7 @@ const Inschrijven = () => {
             )}
 
             {/* Navigation */}
-            <div className="mt-8 flex items-center justify-between gap-4">
+            <div className="mt-8 flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
               {step > 1 ? (
                 <Button
                   variant="ghost"
@@ -235,6 +303,7 @@ const Inschrijven = () => {
                   icon={ArrowLeft}
                   iconPosition="left"
                   disabled={isSubmitting}
+                  className="w-full sm:w-auto"
                 >
                   Terug
                 </Button>
@@ -243,14 +312,18 @@ const Inschrijven = () => {
               )}
 
               {step < 3 ? (
-                <Button onClick={handleNext} icon={ArrowRight}>
+                <Button
+                  onClick={handleNext}
+                  icon={ArrowRight}
+                  className="w-full sm:w-auto"
+                >
                   Volgende
                 </Button>
               ) : (
                 <Button
                   onClick={handleSubmit}
                   disabled={isSubmitting}
-                  className="min-w-[200px]"
+                  className="w-full sm:w-auto sm:min-w-[200px]"
                 >
                   {isSubmitting ? (
                     <>
@@ -263,6 +336,7 @@ const Inschrijven = () => {
                 </Button>
               )}
             </div>
+
           </motion.div>
 
           {/* Summary sidebar for larger screens */}

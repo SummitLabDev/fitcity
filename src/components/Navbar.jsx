@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react';
 import clsx from 'clsx';
 import Container from './Container';
 import { navItems } from '../data/siteMeta';
+import Button from './ui/Button';
 
 const NavItem = ({ to, children, onClick, showDivider = true }) => (
   <NavLink
@@ -51,13 +52,18 @@ const Navbar = () => {
           </div>
         </NavLink>
 
-        <nav className="hidden items-center gap-8 lg:flex">
-          {navItems.map((item, index) => (
-            <NavItem key={item.to} to={item.to} showDivider={index !== navItems.length - 1}>
-              {item.label}
-            </NavItem>
-          ))}
-        </nav>
+        <div className="hidden items-center gap-6 lg:flex">
+          <nav className="flex items-center gap-8">
+            {navItems.map((item, index) => (
+              <NavItem key={item.to} to={item.to} showDivider={index !== navItems.length - 1}>
+                {item.label}
+              </NavItem>
+            ))}
+          </nav>
+          <Button as={NavLink} to="/inschrijven" size="md" className="shadow-glow">
+            Inschrijven
+          </Button>
+        </div>
         <button
           type="button"
           className="lg:hidden rounded-full border border-white/20 p-2 text-white"
@@ -100,6 +106,9 @@ const Navbar = () => {
                       {item.label}
                     </NavItem>
                   ))}
+                  <Button as={NavLink} to="/inschrijven" className="w-full" size="lg">
+                    Inschrijven
+                  </Button>
                   <div className="text-xs uppercase tracking-[0.35em] text-white/40">
                     <p>Ma-vr 08:30 - 22:00</p>
                     <p>Za 09:00 - 16:00 & Zo 09:30 - 16:00</p>

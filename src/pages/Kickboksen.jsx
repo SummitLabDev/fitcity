@@ -59,6 +59,14 @@ const Kickboksen = () => {
               </ul>
               <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
                 <Button
+                  as="a"
+                  href="#kickboxing-memberships"
+                  size="lg"
+                  className="sm:min-w-[180px] justify-center"
+                >
+                  Bekijk abonnementen
+                </Button>
+                <Button
                   as={Link}
                   to={primaryCta.href}
                   variant="ghost"
@@ -67,9 +75,6 @@ const Kickboksen = () => {
                   data-tracking-id={primaryCta.trackingId}
                 >
                   {primaryCta.label}
-                </Button>
-                <Button as="a" href="#kickboxing-memberships" size="lg" className="sm:min-w-[180px] justify-center">
-                  Bekijk abonnementen
                 </Button>
               </div>
             </div>

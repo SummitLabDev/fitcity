@@ -5,6 +5,25 @@ import PlanCard from '../components/PlanCard';
 import { additionalServices, oneTimeFees, planGroups } from '../data/memberships';
 import { useLocation } from 'react-router-dom';
 
+const faqItems = [
+  {
+    question: 'Zijn er inschrijfkosten?',
+    answer: 'Ja, eenmalig €17,00 bij de start van je lidmaatschap. De eerste incasso gebeurt op de startdatum die je kiest.',
+  },
+  {
+    question: 'Hoe betaal ik het abonnement?',
+    answer: 'Standaard via maandelijkse automatische incasso op je gekozen startdatum. Pin of contante betaling bij de balie kan ook.',
+  },
+  {
+    question: 'Wat is de contractduur en opzegtermijn?',
+    answer: 'Flex is maandelijks opzegbaar. 6/12-maanden lidmaatschappen lopen door tot het einde van de termijn en verlengen daarna voor dezelfde periode; na verlenging geldt een opzegtermijn van 1 maand.',
+  },
+  {
+    question: 'Worden prijzen tussentijds aangepast?',
+    answer: 'Prijswijzigingen worden minimaal een maand vooraf aangekondigd en worden niet tijdens je lopende contracttermijn doorgevoerd.',
+  },
+];
+
 const Pricing = () => {
   const location = useLocation();
   const [activeGroup, setActiveGroup] = useState(planGroups[0]?.key ?? '');
@@ -92,6 +111,26 @@ const Pricing = () => {
             </div>
           ))}
         </div>
+      </Section>
+
+      <Section
+        tone="panel"
+        header={{
+          eyebrow: 'FAQ',
+          title: 'Prijzen en lidmaatschap',
+          subtitle: 'Helder over incasso, contractduur en voorwaarden.',
+        }}
+        contentClassName="grid gap-4 md:grid-cols-2"
+      >
+        {faqItems.map((item) => (
+          <div
+            key={item.question}
+            className="rounded-3xl border border-white/10 bg-white/[0.02] p-5 text-left"
+          >
+            <h3 className="text-lg font-display text-white">{item.question}</h3>
+            <p className="mt-2 text-sm text-white/70">{item.answer}</p>
+          </div>
+        ))}
       </Section>
     </>
   );

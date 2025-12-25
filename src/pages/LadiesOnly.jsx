@@ -66,6 +66,9 @@ const LadiesOnly = () => {
                 </li>
               </ul>
               <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+                <Button as="a" href="#ladies-memberships" size="lg" className="sm:min-w-[180px] justify-center">
+                  Bekijk abonnementen
+                </Button>
                 <Button
                   variant="ghost"
                   size="lg"
@@ -74,9 +77,6 @@ const LadiesOnly = () => {
                   onClick={() => setShowVideo(true)}
                 >
                   Bekijk ladies only
-                </Button>
-                <Button as="a" href="#ladies-memberships" size="lg" className="sm:min-w-[180px] justify-center">
-                  Bekijk abonnementen
                 </Button>
               </div>
             </div>

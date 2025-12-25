@@ -3,8 +3,9 @@ import { openingHoursInline } from './facilityInfo';
 
 const navItems = [
   { label: 'Home', to: '/' },
-  { label: 'Abonnementen', to: '/abonnementen' },
   { label: 'Ladies Only', to: '/ladies-only' },
+  { label: 'Kickboksen', to: '/kickboksen' },
+  { label: 'Abonnementen', to: '/abonnementen' },
   { label: 'Contact', to: '/contact' },
 ];
 

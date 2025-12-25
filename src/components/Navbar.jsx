@@ -4,11 +4,9 @@ import { useEffect, useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import clsx from 'clsx';
 import Container from './Container';
-import Button from './ui/Button';
-import { primaryCta } from '../data/ctaConfig';
 import { navItems } from '../data/siteMeta';
 
-const NavItem = ({ to, children, onClick }) => (
+const NavItem = ({ to, children, onClick, showDivider = true }) => (
   <NavLink
     to={to}
     onClick={onClick}
@@ -22,7 +20,7 @@ const NavItem = ({ to, children, onClick }) => (
   >
     <span className="inline-flex items-center gap-2">
       {children}
-      <span className="hidden h-px w-6 bg-white/20 md:block" aria-hidden />
+      {showDivider && <span className="hidden h-px w-6 bg-white/20 md:block" aria-hidden />}
     </span>
   </NavLink>
 );
@@ -54,19 +52,12 @@ const Navbar = () => {
         </NavLink>
 
         <nav className="hidden items-center gap-8 lg:flex">
-          {navItems.map((item) => (
-            <NavItem key={item.to} to={item.to}>
+          {navItems.map((item, index) => (
+            <NavItem key={item.to} to={item.to} showDivider={index !== navItems.length - 1}>
               {item.label}
             </NavItem>
           ))}
         </nav>
-
-        <div className="hidden lg:block">
-          <Button as={NavLink} to={primaryCta.href} size="sm" data-tracking-id={primaryCta.trackingId}>
-            {primaryCta.label}
-          </Button>
-        </div>
-
         <button
           type="button"
           className="lg:hidden rounded-full border border-white/20 p-2 text-white"
@@ -99,22 +90,19 @@ const Navbar = () => {
             >
               <Container className="py-10">
                 <div className="flex flex-col gap-6 text-center">
-                  {navItems.map((item) => (
-                    <NavItem key={item.to} to={item.to} onClick={() => setIsOpen(false)}>
+                  {navItems.map((item, index) => (
+                    <NavItem
+                      key={item.to}
+                      to={item.to}
+                      onClick={() => setIsOpen(false)}
+                      showDivider={index !== navItems.length - 1}
+                    >
                       {item.label}
                     </NavItem>
                   ))}
-                  <Button
-                    as={NavLink}
-                    to={primaryCta.href}
-                    onClick={() => setIsOpen(false)}
-                    data-tracking-id={primaryCta.trackingId}
-                  >
-                    {primaryCta.label}
-                  </Button>
                   <div className="text-xs uppercase tracking-[0.35em] text-white/40">
                     <p>Ma-vr 08:30 - 22:00</p>
-                    <p>Za 09:00 - 16:00 · Zo 09:30 - 16:00</p>
+                    <p>Za 09:00 - 16:00 & Zo 09:30 - 16:00</p>
                   </div>
                 </div>
               </Container>
@@ -127,3 +115,8 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+
+
+

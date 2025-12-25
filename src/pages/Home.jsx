@@ -39,16 +39,16 @@ const socialStats = [
 ];
 
 const kickboxingCards = [
-  { image: '/kickboxing.webp', title: 'Kickboksen', description: 'Techniek, conditie en sparren in kleine groepen.' },
-  { image: '/kinderkickboksen.jpg', title: 'Kinderkickboksen', description: 'Speelse lessen met focus op zelfvertrouwen.' },
+  { image: '/kickboksen-hero.webp', title: 'Kickboksen', description: 'Techniek, conditie en sparren in kleine groepen.', to: '/kickboksen' },
+  { image: '/kickboksen-kids.webp', title: 'Kinderkickboksen', description: 'Speelse lessen met focus op zelfvertrouwen.', to: '/kickboksen' },
 ];
 
 const kickboxingSchedule = [
-  { label: 'Volwassenen', detail: 'Avondlessen op ma/wo/vr + zaterdagochtend' },
-  { label: 'Intro & techniek', detail: 'Regelmatig ingepland, aanmelden via app of balie' },
-  { label: 'Kids', detail: 'Woensdag & zaterdag slots, niveaus per leeftijd' },
+  { label: 'Maandag', detail: 'Kids 18:00-19:00, volwassenen 19:00-20:00' },
+  { label: 'Donderdag', detail: 'Kids 18:00-19:00, volwassenen 19:00-20:00' },
+  { label: 'Zondag', detail: 'Kids 10:00-11:00, volwassenen 11:00-12:00' },
   { label: 'Membership opties', detail: 'Kickboksen 1x p/w of onbeperkt, of all-in via Ultimate Fit Deal.' },
-  { label: 'Ultimate Fit Deal', detail: 'Onbeperkt fitness en (kick)boksen onder één membership.' },
+  { label: 'Proefles', detail: 'Laagdrempelig instappen; materiaal te leen in de club.' },
 ];
 
 const Home = () => {
@@ -76,7 +76,7 @@ const Home = () => {
               'Kickboksen voor kids en volwassenen',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
-                <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-fitcity/20 text-fitcity" aria-hidden="true">›</span>
+                <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-fitcity/20 text-fitcity" aria-hidden="true">-</span>
                 {item}
               </li>
             ))}
@@ -181,41 +181,35 @@ const Home = () => {
         tone="panel"
         header={{
           eyebrow: 'Kickboksen',
-          title: 'Rooster en memberships in een oogopslag',
-          subtitle: 'Losse kickboksdeals of all-in met Ultimate Fit (fitness + boksen).',
+          title: 'Kickboksen voor kids en volwassenen',
+          subtitle: 'Bekijk alle info, rooster en memberships op de kickboksen pagina.',
         }}
-        contentClassName="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]"
+        contentClassName="grid gap-8 lg:grid-cols-2"
       >
-        <div className="grid gap-6 sm:grid-cols-2">
-          {kickboxingCards.map((item) => (
-            <div key={item.title} className="group relative overflow-hidden rounded-4xl border border-white/10">
-              <img src={item.image} alt={item.title} className="h-64 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-              <div className="absolute bottom-4 left-4 right-4">
-                <h3 className="text-2xl font-display">{item.title}</h3>
-                <p className="text-sm text-white/80">{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <div className="space-y-4 rounded-4xl border border-white/10 bg-white/[0.02] p-6">
-          <p className="text-xs uppercase tracking-[0.4em] text-fitcity">Rooster highlights</p>
-          <div className="space-y-3 text-sm text-white/70">
-            {kickboxingSchedule.map((slot) => (
-              <div key={slot.label} className="rounded-2xl border border-white/5 bg-white/[0.02] px-4 py-3">
-                <p className="font-semibold text-white">{slot.label}</p>
-                <p className="text-white/70">{slot.detail}</p>
-              </div>
-            ))}
-          </div>
+        <div className="space-y-6">
+          <p className="text-white/70">
+            Techniek, conditie en sparren op afspraak. Kids (vanaf 6 jaar) en volwassenen trainen op vaste momenten. Alles over het rooster en de deals vind je op de kickboksen pagina.
+          </p>
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button as={Link} to="/abonnementen#kickboxing" className="w-full justify-center">
-              Bekijk kickboks memberships
+            <Button as={Link} to="/kickboksen" className="w-full justify-center">
+              Naar kickboksen pagina
             </Button>
-            <Button as={Link} to="/contact" variant="ghost" className="w-full justify-center">
-              Vraag naar het actuele rooster
+            <Button as={Link} to="/contact#proefles" variant="ghost" className="w-full justify-center">
+              Plan een proefles
             </Button>
           </div>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-2">
+          {kickboxingCards.map((item) => (
+            <Link
+              key={item.title}
+              to={item.to}
+              className="group relative overflow-hidden rounded-4xl border border-white/10 transition-colors hover:border-fitcity/30"
+            >
+              <img src={item.image} alt={item.title} className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+            </Link>
+          ))}
         </div>
       </Section>
 
@@ -230,3 +224,5 @@ const Home = () => {
 };
 
 export default Home;
+
+

@@ -51,7 +51,7 @@ const plans = [
     price: 19.95,
     period: 'maand',
     description: '1x per week training, 12 maanden.',
-    features: ['12 maanden toegang', '1 training per week', 'Toegang tot bokszalen'],
+    features: ['12 maanden toegang', '1 training per week', 'Toegang tot bokszaal'],
     contractMonths: 12,
     includesKickboxing: true,
     isLadiesOnly: false,
@@ -183,6 +183,12 @@ const homeMembershipTeasers = ['smart-deal', 'ladies-jaar-deal', 'ultimate-fit']
 
 const ladiesOnlyPlans = ['ladies-jaar-deal', 'ladies-halfjaar', 'ladies-flex'].map((id) => planLookup[id]);
 
+const kickboxingPlans = ['kickboxing-weekly', 'kickboxing-unlimited', 'ultimate-fit'].map((id) => {
+  const plan = planLookup[id];
+  if (!plan) return plan;
+  return { ...plan, mostPopular: id === 'ultimate-fit' };
+});
+
 const additionalServices = [{ name: 'Personal Training', price: 25, description: 'Per les, 1-op-1 coaching.' }];
 
 const oneTimeFees = [{ name: 'Inschrijfkosten', price: 17, description: 'Eenmalig bij start nieuw lidmaatschap.' }];
@@ -192,6 +198,7 @@ export {
   planGroups,
   homeMembershipTeasers,
   ladiesOnlyPlans,
+  kickboxingPlans,
   additionalServices,
   oneTimeFees,
 };

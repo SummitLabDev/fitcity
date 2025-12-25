@@ -122,10 +122,8 @@ const Hero = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-4 rounded-2xl border border-white/10 bg-white/[0.03] p-3 text-xs text-white/70">
-                <div className="flex items-center justify-between">
-                  <span>Speciale openingstijden</span>
-                </div>
+              <div className="mt-3 text-xs text-white/60">
+                <p className="uppercase tracking-[0.3em] text-white/50">Speciale openingstijden</p>
                 <div className="mt-2 space-y-1">
                   {holidayHours.map((item) => (
                     <div key={item.day} className="flex justify-between">

@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Pricing from './pages/Pricing';
 import LadiesOnly from './pages/LadiesOnly';
+import Kickboksen from './pages/Kickboksen';
 import Contact from './pages/Contact';
 import Privacy from './pages/Privacy';
 import Voorwaarden from './pages/Voorwaarden';
@@ -27,6 +28,7 @@ function App() {
             <Route path="/" element={<AnimatedPage><Home /></AnimatedPage>} />
             <Route path="/abonnementen" element={<AnimatedPage><Pricing /></AnimatedPage>} />
             <Route path="/ladies-only" element={<AnimatedPage><LadiesOnly /></AnimatedPage>} />
+            <Route path="/kickboksen" element={<AnimatedPage><Kickboksen /></AnimatedPage>} />
             <Route path="/contact" element={<AnimatedPage><Contact /></AnimatedPage>} />
             <Route path="/privacy" element={<AnimatedPage><Privacy /></AnimatedPage>} />
             <Route path="/voorwaarden" element={<AnimatedPage><Voorwaarden /></AnimatedPage>} />

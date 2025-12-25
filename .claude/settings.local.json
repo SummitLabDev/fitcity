@@ -5,7 +5,8 @@
       "WebSearch",
       "Bash(curl:*)",
       "Bash(ls:*)",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(file:*)"
     ]
   }
 }

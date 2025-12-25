@@ -4,6 +4,7 @@ const primaryCta = {
   trackingId: 'cta-primary',
   contextualLabels: {
     ladiesOnly: 'Plan proefles',
+    kickboxing: 'Plan proefles',
   },
 };
 

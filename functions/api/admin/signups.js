@@ -8,23 +8,16 @@ export async function onRequestGet(context) {
   const { request, env } = context;
 
   const corsHeaders = {
-    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': 'https://fitcity.summitlab.dev',
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
   };
 
   try {
     const url = new URL(request.url);
-    const password = url.searchParams.get('password');
     const status = url.searchParams.get('status') || 'pending_pickup';
 
-    // Verify admin password
-    if (password !== env.ADMIN_PASSWORD) {
-      return new Response(JSON.stringify({ error: 'Unauthorized' }), {
-        status: 401,
-        headers: { 'Content-Type': 'application/json', ...corsHeaders },
-      });
-    }
+    // Authentication handled by Cloudflare Access - if request reaches here, user is authenticated
 
     // Get signups by status
     const signups = await getAllSignupsByStatus(env.DB, status);
@@ -67,7 +60,7 @@ export async function onRequestOptions() {
   return new Response(null, {
     status: 204,
     headers: {
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': 'https://fitcity.summitlab.dev',
       'Access-Control-Allow-Methods': 'GET, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
     },

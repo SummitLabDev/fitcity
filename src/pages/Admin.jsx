@@ -1,51 +1,21 @@
 import { useState, useEffect } from 'react';
-import { Lock, RefreshCw, Check, X } from 'lucide-react';
+import { RefreshCw, Check, X } from 'lucide-react';
+import clsx from 'clsx';
 import AnimatedPage from '../components/AnimatedPage';
 import Container from '../components/Container';
 import Button from '../components/ui/Button';
 
 const Admin = () => {
-  const [password, setPassword] = useState('');
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [isAuthenticating, setIsAuthenticating] = useState(false);
-  const [authError, setAuthError] = useState('');
   const [signups, setSignups] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [editingNotes, setEditingNotes] = useState({});
   const [saving, setSaving] = useState({});
+  const [activeTab, setActiveTab] = useState('pending_pickup');
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setIsAuthenticating(true);
-    setAuthError('');
-
-    try {
-      const response = await fetch('/api/admin/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ password }),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        setIsAuthenticated(true);
-        sessionStorage.setItem('adminPassword', password);
-        loadSignups(password);
-      } else {
-        setAuthError('Incorrect password');
-      }
-    } catch (error) {
-      setAuthError('Login failed');
-    } finally {
-      setIsAuthenticating(false);
-    }
-  };
-
-  const loadSignups = async (pwd) => {
+  const loadSignups = async (status = 'pending_pickup') => {
     setIsLoading(true);
     try {
-      const response = await fetch(`/api/admin/signups?password=${encodeURIComponent(pwd)}&status=pending_pickup`);
+      const response = await fetch(`/api/admin/signups?status=${status}`);
       const data = await response.json();
       if (data.signups) {
         setSignups(data.signups);
@@ -70,14 +40,13 @@ const Admin = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          password,
           signupId,
           paidInPerson: editingNotes[signupId].paidInPerson,
           adminNotes: editingNotes[signupId].adminNotes,
         }),
       });
       // Reload signups to reflect changes
-      await loadSignups(password);
+      await loadSignups(activeTab);
     } catch (error) {
       console.error('Failed to save', error);
     } finally {
@@ -105,67 +74,69 @@ const Admin = () => {
     }));
   };
 
+  const handleTabChange = (newTab) => {
+    setActiveTab(newTab);
+    loadSignups(newTab);
+  };
+
   const copyToClipboard = (text) => {
     navigator.clipboard.writeText(text);
   };
 
   useEffect(() => {
-    const saved = sessionStorage.getItem('adminPassword');
-    if (saved) {
-      setPassword(saved);
-      setIsAuthenticated(true);
-      loadSignups(saved);
-    }
-  }, []);
+    // Load signups on mount and when tab changes
+    // Authentication is handled by Cloudflare Access
+    loadSignups(activeTab);
+  }, [activeTab]);
 
-  if (!isAuthenticated) {
-    return (
-      <AnimatedPage>
-        <section className="flex min-h-screen items-center py-24">
-          <Container size="sm">
-            <div className="rounded-3xl border border-white/10 bg-white/[0.02] p-8 sm:p-12">
-              <div className="mb-8 text-center">
-                <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-fitcity/20">
-                  <Lock className="h-8 w-8 text-fitcity" />
-                </div>
-                <h1 className="font-display text-3xl">Admin Login</h1>
-                <p className="mt-2 text-white/60">Enter password to view signups</p>
-              </div>
-
-              <form onSubmit={handleLogin} className="space-y-4">
-                <input
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password"
-                  className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white placeholder-white/40 outline-none focus:border-fitcity"
-                  autoFocus
-                />
-                {authError && <p className="text-sm text-red-400">{authError}</p>}
-                <Button type="submit" disabled={isAuthenticating} className="w-full justify-center">
-                  {isAuthenticating ? 'Logging in...' : 'Login'}
-                </Button>
-              </form>
-            </div>
-          </Container>
-        </section>
-      </AnimatedPage>
-    );
-  }
+  // Authentication is handled by Cloudflare Access
+  // If user reaches this page, they are already authenticated
 
   return (
     <AnimatedPage>
       <section className="min-h-screen py-12 lg:py-16">
         <Container size="full">
+          {/* Tab Navigation */}
+          <div className="mb-6 flex gap-3">
+            <button
+              type="button"
+              onClick={() => handleTabChange('pending_pickup')}
+              className={clsx(
+                'rounded-full border px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.3em] transition',
+                activeTab === 'pending_pickup'
+                  ? 'border-fitcity text-fitcity bg-fitcity/10'
+                  : 'border-white/10 text-white/60 hover:border-white/30 hover:text-white'
+              )}
+            >
+              Pending
+            </button>
+            <button
+              type="button"
+              onClick={() => handleTabChange('paid')}
+              className={clsx(
+                'rounded-full border px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.3em] transition',
+                activeTab === 'paid'
+                  ? 'border-fitcity text-fitcity bg-fitcity/10'
+                  : 'border-white/10 text-white/60 hover:border-white/30 hover:text-white'
+              )}
+            >
+              Paid
+            </button>
+          </div>
+
           <div className="mb-8 flex items-center justify-between">
             <div>
-              <h1 className="font-display text-3xl">Pending Signups</h1>
-              <p className="mt-1 text-white/60">{signups.length} pending</p>
+              <h1 className="font-display text-3xl">
+                {activeTab === 'pending_pickup' ? 'Pending Signups' : 'Paid Signups'}
+              </h1>
+              <p className="mt-1 text-white/60">
+                {signups.length} {activeTab === 'pending_pickup' ? 'pending' : 'paid'}
+              </p>
             </div>
             <Button
               variant="ghost"
               icon={RefreshCw}
-              onClick={() => loadSignups(password)}
+              onClick={() => loadSignups(activeTab)}
               disabled={isLoading}
             >
               Refresh
@@ -176,7 +147,9 @@ const Admin = () => {
             <div className="text-center text-white/60">Loading...</div>
           ) : signups.length === 0 ? (
             <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-12 text-center">
-              <p className="text-white/60">No pending signups</p>
+              <p className="text-white/60">
+                No {activeTab === 'pending_pickup' ? 'pending' : 'paid'} signups
+              </p>
             </div>
           ) : (
             <div className="overflow-x-auto rounded-2xl border border-white/10 bg-white/[0.02]">

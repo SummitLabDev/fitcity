@@ -6,75 +6,190 @@ const Voorwaarden = () => {
       <Section
         tone="contrast"
         header={{
-          eyebrow: 'Voorwaarden',
-          title: 'Voorwaarden Fitcity Culemborg',
-          subtitle: 'Deze basisvoorwaarden gelden voor het gebruik van onze diensten en website.',
+          eyebrow: 'Algemene Voorwaarden',
+          title: 'Algemene Voorwaarden Fitcity Culemborg',
+          subtitle: 'Door in te schrijven bij Fitcity Culemborg accepteert u deze algemene voorwaarden en gaat u een bindende overeenkomst aan.',
           align: 'left',
         }}
         contentClassName="space-y-8"
         disableReveal
       >
         <div className="rounded-4xl border border-white/10 bg-white/[0.02] p-8 text-sm text-white/70">
-          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Laatst bijgewerkt: 25 december 2025</p>
+          <p className="text-xs uppercase tracking-[0.3em] text-white/50">Laatst bijgewerkt: 26 december 2025</p>
+        </div>
+
+        {/* Online inschrijving notice */}
+        <div className="space-y-4 rounded-4xl border border-fitcity/30 bg-fitcity/5 p-8 text-sm">
+          <h3 className="text-lg font-display text-white">Online Inschrijving</h3>
+          <div className="space-y-3 text-white/80">
+            <p>
+              Door het inschrijfformulier op onze website in te vullen en te versturen, gaat u een <strong className="text-white">bindende overeenkomst</strong> aan met Fitcity Culemborg. U accepteert hiermee deze algemene voorwaarden en verklaart akkoord te gaan met de betalingsverplichtingen die voortvloeien uit het door u gekozen abonnement.
+            </p>
+            <p>
+              Bij online inschrijving verstrekt u uw IBAN-nummer ten behoeve van automatische incasso via SEPA. Door het inschrijfformulier te versturen, geeft u Fitcity Culemborg een <strong className="text-white">SEPA-machtiging</strong> om de maandelijkse contributie en eventuele andere kosten automatisch van uw bankrekening af te schrijven.
+            </p>
+            <p>
+              De inschrijfkosten (€17,00) betaalt u bij het ophalen van uw ledenpas op onze locatie. Pas na betaling van de inschrijfkosten en het tonen van een geldig legitimatiebewijs wordt uw lidmaatschap definitief geactiveerd.
+            </p>
+            <p className="text-xs text-white/60">
+              Let op: Het versturen van het online inschrijfformulier is juridisch bindend. Lees daarom deze voorwaarden zorgvuldig door voordat u zich inschrijft.
+            </p>
+          </div>
         </div>
 
         <div className="space-y-8 rounded-4xl border border-white/10 bg-white/[0.03] p-8 text-sm text-white/70">
+          {/* Artikel 1 */}
           <div className="space-y-3">
-            <h3 className="text-xl font-display text-white">1. Toepasselijkheid</h3>
-            <p>Deze voorwaarden zijn van toepassing op het gebruik van de faciliteiten en diensten van Fitcity Culemborg en op het gebruik van onze website.</p>
+            <h3 className="text-xl font-display text-white">Artikel 1: Inschrijving</h3>
+            <div className="space-y-2">
+              <p>
+                <strong>a.</strong> Het lidmaatschap vangt aan op de datum van ingang, zoals door u opgegeven bij de (online) inschrijving, en nadat u het (digitale of papieren) inschrijfformulier heeft ingevuld en een geldig legitimatiebewijs heeft getoond. Het inschrijfgeld bedraagt €17,00. Als bewijs van het lidmaatschap ontvangt u een toegangsbewijs (pas, chip) tot de sportschool.
+              </p>
+              <p>
+                <strong>b.</strong> Uitsluitend op vertoon van een geldige toegangsbewijs krijgt u toegang tot de fitness. De minimale leeftijd om te mogen sporten bij de fitness is 12 jaar. Jongeren tussen de 12 en 14 jaar, die in bezit zijn van een toegangsbewijs, krijgen uitsluitend toegang onder begeleiding en verantwoordelijkheid van een meetrainend lid van 18 jaar of ouder.
+              </p>
+              <p>
+                <strong>c.</strong> De houder van de toegangsbewijs blijft te allen tijde aansprakelijk voor het gebruik en/of misbruik van de toegangsbewijs. Gebruik van de toegangsbewijs is persoonsgebonden. De pas is niet overdraagbaar. Bij misbruik wordt de toegangsbewijs ontbonden en blijft de betalingsverplichting van kracht.
+              </p>
+              <p>
+                <strong>d.</strong> Bij verlies of diefstal of anderszins in het ongerede raken van de toegangsbewijs, blijft de betalingsverplichting voor het lopende lidmaatschapsjaar onverminderd van kracht. Een vervangende toegangsbewijs kan tegen betaling van €5,00 worden verkregen.
+              </p>
+            </div>
           </div>
 
+          {/* Artikel 2 */}
           <div className="space-y-3">
-            <h3 className="text-xl font-display text-white">2. Diensten en aanbod</h3>
-            <p>Wij bieden fitness, groepslessen en begeleiding. Het actuele aanbod en de tarieven staan op de website of zijn verkrijgbaar bij de balie. Wij kunnen het aanbod en de openingstijden wijzigen wanneer nodig.</p>
+            <h3 className="text-xl font-display text-white">Artikel 2: Abonnement, termijn- en betalingsvoorwaarden</h3>
+            <div className="space-y-2">
+              <p>
+                <strong>a.</strong> Het abonnement kan op elk gewenst moment ingaan en gaat u aan voor de periode van 6, 12 of 24 maanden, afhankelijk van het door u gekozen abonnement. Na de overeengekomen periode zal het abonnement automatisch worden verlengd voor dezelfde contractperiode. Na een automatische verlenging geldt een opzegtermijn van 1 maand. Het is niet mogelijk een nieuw contract tussentijds op te zeggen.
+              </p>
+              <p>
+                <strong>b.</strong> Een lid, die opnieuw een abonnement wil afsluiten bij Fitcity Culemborg, wordt €5,00 administratiekosten in rekening gebracht.
+              </p>
+              <p>
+                <strong>c.</strong> U kunt bij Fitcity Culemborg kiezen uit de volgende betalingsmethoden:
+              </p>
+              <ul className="ml-6 space-y-1 list-disc">
+                <li>Automatische incasso (SEPA)</li>
+                <li>Pinbetaling bij de balie van Fitcity Culemborg</li>
+                <li>Contante betaling bij de balie van Fitcity Culemborg</li>
+              </ul>
+              <p>
+                <strong>d.</strong> <strong className="text-white">Automatische incasso:</strong> Indien u kiest voor automatische incasso, wordt het bedrag maandelijks van uw rekening afgeschreven. Bij online inschrijving geeft u door het verstrekken van uw IBAN en het verzenden van het inschrijfformulier automatisch toestemming voor SEPA automatische incasso. Bij een niet tijdige ontvangst van het verschuldigde bedrag wordt de toegangsbewijs geblokkeerd.
+              </p>
+              <p>
+                <strong>e.</strong> De toegangsbewijs wordt geblokkeerd zodra er niet aan de betalingsverplichting is voldaan. Het lid zal dan de toegang tot activiteiten in Fitcity Culemborg worden geweigerd. Fitcity Culemborg is gerechtigd bij een betalingsachterstand de relatie met het lid te beëindigen, zonder dat de betalingsverplichting vervalt.
+              </p>
+              <p>
+                <strong>f.</strong> Fitcity Culemborg behoudt zich het recht voor tarieven tussentijds te wijzigen. Tenminste één maand voor een prijswijziging worden de leden hiervan in kennis gesteld. Voor de lopende abonnementsduur worden de prijzen niet gewijzigd.
+              </p>
+              <p>
+                <strong>g.</strong> Bij oplopende betalingsachterstanden of in gebreke blijven, zullen wij de incasso uit handen geven. Alle hierbij gemaakte kosten worden eveneens in rekening gebracht.
+              </p>
+            </div>
           </div>
 
+          {/* Artikel 3 */}
           <div className="space-y-3">
-            <h3 className="text-xl font-display text-white">3. Lidmaatschap en overeenkomst</h3>
-            <p>Wanneer je een lidmaatschap afsluit (in de club of via de pagina Inschrijven), gelden de afspraken uit jouw overeenkomst. Deze voorwaarden vullen die overeenkomst aan waar nodig.</p>
-            <p>Bij online inschrijven kies je zelf de startdatum. De eerste incasso wordt op of rond die gekozen startdatum uitgevoerd.</p>
+            <h3 className="text-xl font-display text-white">Artikel 3: Trainingen / Trainingstijden</h3>
+            <div className="space-y-2">
+              <p>
+                <strong>a.</strong> Er is keuze uit verschillende abonnementen, zoals vermeld op onze website en bij de balie.
+              </p>
+              <p>
+                <strong>b.</strong> Met uw toegangsbewijs kunt u gebruik maken van de fitness & cardio apparatuur en groepslessen, afhankelijk van uw gekozen abonnement.
+              </p>
+              <p>
+                <strong>c.</strong> Fitnesscentrum Fitcity Culemborg behoudt zich het recht voor om de openingstijden te wijzigen.
+              </p>
+              <p>
+                <strong>d.</strong> Als het lid geen gebruik maakt van het recht tot onbeperkt trainen of deelnemen aan cursusonderdelen en/of -activiteiten, vindt geen restitutie van de contributie plaats.
+              </p>
+              <p>
+                <strong>e.</strong> Op 2e paasdag, 2e pinksterdag en 2e kerstdag is de fitnessafdeling beperkt open. Op overige officiële en erkende feestdagen is het gehele fitnesscentrum gesloten.
+              </p>
+            </div>
           </div>
 
+          {/* Artikel 4 */}
           <div className="space-y-3">
-            <h3 className="text-xl font-display text-white">4. Betaling</h3>
-            <p>Betaling verloopt via de afgesproken betaalmethode. Online betalingen worden afgehandeld door Mollie; wij ontvangen geen volledige kaartgegevens en verwerken bankgegevens niet zelf. Via Mollie zien we betaalstatus en beperkte betaalgegevens (zoals naam rekeninghouder, IBAN en tijdstip) voor administratie.</p>
-            <p>De hoogte en de looptijd van de kosten zijn vastgelegd in de overeenkomst. Bij achterstallige betaling kunnen we toegang tot de faciliteiten tijdelijk beperken.</p>
+            <h3 className="text-xl font-display text-white">Artikel 4: Blokkeren</h3>
+            <div className="space-y-2">
+              <p>
+                <strong>a.</strong> In geval van blessure of een langdurende ziekte kan op vertoon van een schriftelijke verklaring van de behandelende arts het abonnement (tijdelijk) worden stopgezet.
+              </p>
+            </div>
           </div>
 
+          {/* Artikel 5 */}
           <div className="space-y-3">
-            <h3 className="text-xl font-display text-white">5. Opzeggen en wijzigen</h3>
-            <p>Opzegging of wijziging van een lidmaatschap gebeurt volgens de afspraken in je overeenkomst. Je kunt ons hiervoor bereiken via info@fitcityculemborg.nl.</p>
+            <h3 className="text-xl font-display text-white">Artikel 5: Beëindigen</h3>
+            <div className="space-y-2">
+              <p>
+                <strong>a.</strong> Bij het beëindigen van het contract dient één maand opzegtermijn in acht te worden genomen met daarbij de geldende voorwaarden van artikel 2.
+              </p>
+              <p>
+                <strong>b.</strong> Het management van Fitnesscentrum Fitcity Culemborg behoudt zich het recht voor bij ernstige of herhaaldelijke schending van de huisregels of ander gebleken onaanvaardbaar gedrag, een lidmaatschap te beëindigen zonder teruggave van betaling en zonder dat de betalingsverplichting voor de lopende periode vervalt.
+              </p>
+            </div>
           </div>
 
+          {/* Artikel 6 */}
           <div className="space-y-3">
-            <h3 className="text-xl font-display text-white">6. Huisregels en veiligheid</h3>
-            <p>We verwachten dat leden en bezoekers zorgvuldig omgaan met apparatuur, instructies van medewerkers opvolgen en respectvol omgaan met anderen. Bij herhaaldelijk ongepast gedrag kunnen we de toegang weigeren.</p>
+            <h3 className="text-xl font-display text-white">Artikel 6: Risico en aansprakelijkheid</h3>
+            <div className="space-y-2">
+              <p>
+                <strong>a.</strong> Het gebruik maken van de apparatuur, het volgen van een programma of van cursusonderdelen en/of -activiteiten bij Fitcity Culemborg, is geheel voor eigen risico. De buitensportactiviteiten zijn eveneens op eigen risico.
+              </p>
+              <p>
+                <strong>b.</strong> Management Fitcity Culemborg aanvaardt geen enkele aansprakelijkheid voor materiële of immateriële schade als gevolg van ongeval, gebruik maken van de faciliteiten, of als gevolg van derden.
+              </p>
+              <p>
+                <strong>c.</strong> Management Fitcity Culemborg aanvaardt geen enkele aansprakelijkheid voor schade, verlies of diefstal van eigendommen van het lid.
+              </p>
+            </div>
           </div>
 
+          {/* Artikel 7 */}
           <div className="space-y-3">
-            <h3 className="text-xl font-display text-white">7. Gezondheid en eigen verantwoordelijkheid</h3>
-            <p>Sporten is op eigen verantwoordelijkheid. Raadpleeg bij twijfel over je gezondheid eerst een arts. Geef blessures of bijzonderheden aan bij onze medewerkers zodat we je goed kunnen begeleiden.</p>
+            <h3 className="text-xl font-display text-white">Artikel 7: Huisregels</h3>
+            <div className="space-y-2">
+              <p>
+                <strong>a.</strong> Het lid wordt geacht op de hoogte te zijn van de huisregels fitnesscentrum Fitcity Culemborg en hiernaar te handelen.
+              </p>
+              <p>
+                <strong>b.</strong> De algemene voorwaarden en de huisregels van Fitcity Culemborg staan op de website www.fitcityculemborg.nl en zijn tevens bij de receptie van Fitcity Culemborg en bij de balie van de fitnesscentrum te verkrijgen.
+              </p>
+            </div>
           </div>
 
+          {/* Artikel 8 */}
           <div className="space-y-3">
-            <h3 className="text-xl font-display text-white">8. Aansprakelijkheid</h3>
-            <p>Fitcity Culemborg is niet aansprakelijk voor indirecte schade. Voor directe schade is onze aansprakelijkheid beperkt tot het wettelijk toelaatbare en alleen bij opzet of grove nalatigheid.</p>
+            <h3 className="text-xl font-display text-white">Artikel 8: Rechtstoepassing</h3>
+            <div className="space-y-2">
+              <p>
+                <strong>a.</strong> Op deze voorwaarden en alle overeenkomsten door of met Fitcity Culemborg aangegaan, is uitsluitend het Nederlandse recht van toepassing.
+              </p>
+              <p>
+                <strong>b.</strong> Alle geschillen zullen worden beslecht door een bevoegde rechter in het arrondissement waar fitnesscentrum Fitcity Culemborg is gevestigd.
+              </p>
+              <p>
+                <strong>c.</strong> Door zijn inschrijving (online of op locatie) verklaart het lid de algemene voorwaarden en de huisregels van fitnesscentrum Fitcity Culemborg te accepteren. Bij online inschrijving geldt het verzenden van het inschrijfformulier als rechtsgeldig bewijs van acceptatie.
+              </p>
+            </div>
           </div>
+        </div>
 
-          <div className="space-y-3">
-            <h3 className="text-xl font-display text-white">9. Intellectueel eigendom</h3>
-            <p>Alle teksten, beelden en materialen op deze website zijn eigendom van Fitcity Culemborg of onze partners en mogen niet zonder toestemming worden gebruikt.</p>
-          </div>
-
-          <div className="space-y-3">
-            <h3 className="text-xl font-display text-white">10. Klachten</h3>
-            <p>Heb je een klacht of vraag? Neem contact met ons op via info@fitcityculemborg.nl. We zoeken samen naar een oplossing.</p>
-          </div>
-
-          <div className="space-y-3">
-            <h3 className="text-xl font-display text-white">11. Wijzigingen en recht</h3>
-            <p>Wij kunnen deze voorwaarden aanpassen wanneer dat nodig is. Nederlands recht is van toepassing.</p>
-          </div>
+        {/* Contact info */}
+        <div className="rounded-4xl border border-white/10 bg-white/[0.02] p-8 text-sm text-white/70">
+          <h3 className="text-lg font-display text-white mb-4">Contact</h3>
+          <p>
+            Fitcity Culemborg<br />
+            Houtweg 8, 4104 AB Culemborg<br />
+            E-mail: info@fitcityculemborg.nl<br />
+            Telefoon: +31 6 46872274
+          </p>
         </div>
       </Section>
     </>

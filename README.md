@@ -1,37 +1,111 @@
 # FitCity Culemborg Website
 
-Marketing site for FitCity Culemborg built with React, Vite, Tailwind, Framer Motion, and React Router. Pages cover the homepage, memberships, Ladies Only, Kickboksen, Contact, and legal content.
+Modern, high-performance marketing website for **FitCity Culemborg**, a fitness center in the Netherlands.
 
-## Getting Started
-- Requirements: Node 18+ and npm.
-- Install: `npm install`
-- Develop: `npm run dev` (Vite dev server, defaults to http://localhost:5173)
-- Build: `npm run build` (outputs to `dist/`)
-- Preview production build: `npm run preview`
+🌐 **Live Site:** [fitcity.summitlab.dev](https://fitcity.summitlab.dev)
 
-## Quality Checks
-- `npm run lint` - ESLint across the project.
-- `npm run validate:memberships` - ensures `src/data/memberships.js` has complete pricing data and referenced plans.
-- `npm run validate:anchors` - ensures the `speciale-openingstijden` anchor exists on Contact only and the footer links to `/contact#speciale-openingstijden`.
+---
+
+## Project Overview
+
+A professional gym website featuring membership information, class schedules, facilities showcase, and contact integration. Built with modern web technologies for fast loading and excellent mobile experience.
+
+**Client:** FitCity Culemborg
+**Industry:** Fitness & Wellness
+**Developed by:** [Summit Labs](https://summitlab.dev)
+
+---
+
+## Tech Stack
+
+- **Frontend:** React 18 with Vite
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Routing:** React Router
+- **Hosting:** Cloudflare Pages
+- **Language:** Dutch (primary market)
+
+---
+
+## Key Features
+
+✅ **Responsive Design** - Optimized for mobile, tablet, and desktop
+✅ **Fast Performance** - Vite build system for lightning-fast loads
+✅ **Smooth Animations** - Framer Motion for engaging interactions
+✅ **Multi-Page Navigation** - Homepage, memberships, classes, contact
+✅ **Contact Integration** - Easy member inquiry handling
+✅ **SEO Optimized** - Built for local search visibility
+
+---
+
+## Pages
+
+- **Homepage** - Hero section with compelling CTA
+- **Memberships** - Pricing and membership options
+- **Ladies Only** - Dedicated women's fitness area
+- **Kickboxing** - Specialized class information
+- **Contact** - Location and inquiry form
+- **Legal** - Privacy policy, terms, cookies
+
+---
+
+## Development
+
+```bash
+# Install dependencies
+npm install
+
+# Run development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Run quality checks
+npm run quality-check
+```
+
+---
 
 ## Project Structure
+
 ```
 src/
-  components/        # Shared UI (Navbar, Footer, AnimatedPage, etc.)
-  data/              # Membership, CTA, site meta, and kickboxing content
-  pages/             # Home, Pricing, LadiesOnly, Kickboksen, Contact, legal pages
-  assets/            # Static visuals referenced by components
-public/              # Public assets (favicons, hero images)
-scripts/             # Validation scripts for anchors and memberships
+├── components/     # Reusable UI components
+├── pages/          # Route-based pages
+├── styles/         # Global styles and Tailwind config
+└── assets/         # Images and static files
 ```
 
-## Content Notes
-- Pricing & memberships: `src/data/memberships.js`. Keep plan fields populated (`id`, `name`, `price` or `priceText`, `description`, `features`) and ensure referenced plans exist; run `npm run validate:memberships` after edits.
-- Kickboxing content: `src/data/kickboxingInfo.js` feeds the Kickboksen page.
-- Navigation/contact metadata: `src/data/siteMeta.js`; CTA labels: `src/data/ctaConfig.js`.
-- Background and typography are configured in `src/index.css` with Tailwind and Google Fonts.
+---
 
-## Deployment & Hosting
-`npm run build` outputs static assets in `dist/`.
-- Host `dist/` on any static provider (Nginx, Apache, Netlify, Vercel, S3/CloudFront, Azure Static, etc.).
-- Because routing is client-side (React Router), add a single-page fallback so unknown paths serve `index.html` (e.g., Nginx `try_files $uri /index.html;`, Netlify `_redirects` with `/* /index.html 200`, Vercel `vercel.json` rewrite to `/`).
+## Performance
+
+- ⚡ **Fast Load Times** - Optimized assets and code splitting
+- 📱 **Mobile-First** - Perfect experience on all devices
+- 🎯 **SEO Ready** - Structured for search engines
+- ♿ **Accessible** - WCAG compliance considerations
+
+---
+
+## About Summit Labs
+
+This website was designed and developed by **Summit Labs**, a web design and automation studio specializing in modern websites for local businesses in the Netherlands.
+
+**Services:** Website Design • Hosting & Maintenance • Business Automation
+**Website:** [summitlab.dev](https://summitlab.dev)
+
+---
+
+## License
+
+© 2024 Summit Labs. All rights reserved.
+
+This is a client project developed for FitCity Culemborg. The code demonstrates the quality and technology stack used by Summit Labs for client deliverables.
+
+---
+
+*Need a website like this for your business? Contact Summit Labs at [summitlab.dev](https://summitlab.dev)*

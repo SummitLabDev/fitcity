@@ -316,8 +316,13 @@ const Contact = () => {
         </form>
       </Section>
 
-      <Section id="speciale-openingstijden" tone="panel" contentClassName="grid gap-8 md:grid-cols-2 lg:grid-cols-[0.9fr_1.1fr]" disableReveal>
-        <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02]">
+      <Section
+        id="speciale-openingstijden"
+        tone="panel"
+        contentClassName={holidayHours.length > 0 ? "grid gap-8 md:grid-cols-2 lg:grid-cols-[0.9fr_1.1fr]" : "flex justify-center"}
+        disableReveal
+      >
+        <div className={`overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] ${holidayHours.length === 0 ? 'w-full max-w-2xl' : ''}`}>
           <iframe
             title="Fitcity Culemborg map"
             src="https://www.google.com/maps?q=Fitcity%20Culemborg&hl=nl&z=15&output=embed"
@@ -327,20 +332,22 @@ const Contact = () => {
             referrerPolicy="no-referrer-when-downgrade"
           />
         </div>
-        <div className="rounded-4xl border border-white/10 bg-white/[0.03] p-6">
-          <div className="flex items-center gap-3 text-fitcity">
-            <Calendar size={20} />
-            <p className="text-xs uppercase tracking-[0.4em]">Speciale openingstijden</p>
+        {holidayHours.length > 0 && (
+          <div className="rounded-4xl border border-white/10 bg-white/[0.03] p-6">
+            <div className="flex items-center gap-3 text-fitcity">
+              <Calendar size={20} />
+              <p className="text-xs uppercase tracking-[0.4em]">Speciale openingstijden</p>
+            </div>
+            <div className="mt-4 space-y-3 text-sm text-white/70">
+              {holidayHours.map((item) => (
+                <div key={item.day} className="flex items-center justify-between">
+                  <span>{item.day}</span>
+                  <span className="text-fitcity">{item.status}</span>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="mt-4 space-y-3 text-sm text-white/70">
-            {holidayHours.map((item) => (
-              <div key={item.day} className="flex items-center justify-between">
-                <span>{item.day}</span>
-                <span className="text-fitcity">{item.status}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        )}
       </Section>
     </>
   );

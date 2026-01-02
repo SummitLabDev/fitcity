@@ -28,7 +28,7 @@ const valueProps = [
   {
     icon: Activity,
     title: 'Kickboksen',
-    copy: 'Lessen voor kids en volwassenen, te combineren met fitness.',
+    copy: 'Techniek en conditie in vaste lessen, te combineren met fitness.',
   },
 ];
 
@@ -38,15 +38,12 @@ const socialStats = [
   { label: 'Only zone', value: 'Ladies' },
 ];
 
-const kickboxingCards = [
-  { image: '/kickboksen-home-card.webp', title: 'Kickboksen', description: 'Techniek, conditie en sparren in kleine groepen.', to: '/kickboksen' },
-  { image: '/kickboksen-kids.webp', title: 'Kinderkickboksen', description: 'Speelse lessen met focus op zelfvertrouwen.', to: '/kickboksen' },
-];
+const kickboxingImage = { image: '/kickboksen-home-card.webp', title: 'Kickboksen', to: '/kickboksen' };
 
 const kickboxingSchedule = [
-  { label: 'Maandag', detail: 'Kids 18:00-19:00, volwassenen 19:00-20:00' },
-  { label: 'Donderdag', detail: 'Kids 18:00-19:00, volwassenen 19:00-20:00' },
-  { label: 'Zondag', detail: 'Kids 10:00-11:00, volwassenen 11:00-12:00' },
+  { label: 'Maandag', detail: '19:00-20:00' },
+  { label: 'Donderdag', detail: '19:00-20:00' },
+  { label: 'Zondag', detail: '11:00-12:00' },
   { label: 'Membership opties', detail: 'Kickboksen 1x p/w of onbeperkt, of all-in via Ultimate Fit Deal.' },
   { label: 'Proefles', detail: 'Laagdrempelig instappen; materiaal te leen in de club.' },
 ];
@@ -73,7 +70,7 @@ const Home = () => {
             {[
               'Cardio & kracht: TechnoGym, Nautilus, SportsArt e.a.',
               'Flexibele abonnementen zonder kleine lettertjes',
-              'Kickboksen voor kids en volwassenen',
+              'Kickboksen met techniek en conditiefocus',
             ].map((item) => (
               <li key={item} className="flex items-start gap-3">
                 <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-fitcity/20 text-fitcity" aria-hidden="true">-</span>
@@ -144,14 +141,14 @@ const Home = () => {
         tone="panel"
         header={{
           eyebrow: 'Kickboksen',
-          title: 'Kickboksen voor kids en volwassenen',
-          subtitle: 'Techniek, conditie en plezier in lessen voor kids en volwassenen.',
+          title: 'Kickboksen: techniek en conditie',
+          subtitle: 'Train op jouw niveau met focus op techniek, kracht en uithoudingsvermogen.',
         }}
         contentClassName="grid gap-8 lg:grid-cols-2"
       >
         <div className="space-y-6">
           <p className="text-white/70">
-            Kickboksen met focus op techniek en conditie. Kids (vanaf 6 jaar) en volwassenen trainen op vaste tijden. Bekijk het rooster, tarieven en proeflesmogelijkheden.
+            Kickboksen met focus op techniek en conditie. Trainingen op vaste tijden voor alle niveaus, van beginners tot gevorderden. Bekijk het rooster, tarieven en proeflesmogelijkheden.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row">
             <Button as={Link} to="/kickboksen" className="w-full justify-center">
@@ -162,18 +159,13 @@ const Home = () => {
             </Button>
           </div>
         </div>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {kickboxingCards.map((item) => (
-            <Link
-              key={item.title}
-              to={item.to}
-              className="group relative overflow-hidden rounded-4xl border border-white/10 transition-colors hover:border-fitcity/30"
-            >
-              <img src={item.image} alt={item.title} className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-            </Link>
-          ))}
-        </div>
+        <Link
+          to={kickboxingImage.to}
+          className="group relative overflow-hidden rounded-4xl border border-white/10 transition-colors hover:border-fitcity/30"
+        >
+          <img src={kickboxingImage.image} alt={kickboxingImage.title} className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+        </Link>
       </Section>
 
       <Section

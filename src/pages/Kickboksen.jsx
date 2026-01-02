@@ -11,22 +11,16 @@ import { getPrimaryCta } from '../data/ctaConfig';
 
 const heroBullets = [
   'Techniek- en conditieblokken met pads en bagwork',
-  'Lessen voor kids (vanaf 6 jaar) en volwassenen',
+  'Toegankelijke lessen voor alle niveaus',
   'Sparren veilig en begeleid met duidelijke veiligheidsregels',
   'Combineer met fitness via Ultimate Fit',
-];
-
-const kidsHighlights = [
-  'Respect en discipline op een speelse manier',
-  'Samenwerken en zelfvertrouwen opbouwen',
-  'Beweging, balans en basisvaardigheden',
 ];
 
 const kickboxingGalleryImages = [
   { src: '/kickboxen-pictures/kickboxen-1.jpeg', alt: 'Kickbokstraining bij FitCity' },
   { src: '/kickboxen-pictures/kickboxen-2.jpeg', alt: 'Groepstraining kickboksen' },
   { src: '/kickboxen-pictures/kickboxen-3.jpeg', alt: 'Techniektraining met pads' },
-  { src: '/kickboxen-pictures/kickboxen-4.jpeg', alt: 'Kickboksles voor kids en volwassenen' },
+  { src: '/kickboxen-pictures/kickboxen-4.jpeg', alt: 'Kickbokstraining bij FitCity' },
   { src: '/kickboxen-pictures/kickboxen-5.jpeg', alt: 'Sparren onder begeleiding' },
   { src: '/kickboxen-pictures/kickboxen-6.jpeg', alt: 'Conditietraining kickboksen' },
 ];
@@ -121,8 +115,8 @@ const Kickboksen = () => {
       <Section
         header={{
           eyebrow: 'Rooster',
-          title: 'Lessen voor kids en volwassenen',
-          subtitle: 'Meerdere momenten per week, makkelijk te combineren.',
+          title: 'Trainingstijden',
+          subtitle: 'Vaste momenten op maandag, donderdag en zondag.',
         }}
         contentClassName="grid gap-6 md:grid-cols-3"
       >
@@ -173,48 +167,6 @@ const Kickboksen = () => {
             sizes="(min-width: 1024px) 45vw, 100vw"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" aria-hidden="true" />
-        </div>
-      </Section>
-
-      <Section
-        header={{
-          eyebrow: 'Kinderkickboksen',
-          title: 'Spelenderwijs leren en groeien',
-          subtitle: 'Voor kinderen vanaf 6 jaar - focus op plezier, techniek en zelfvertrouwen.',
-        }}
-        contentClassName="grid items-center gap-10 lg:grid-cols-2"
-      >
-        <div className="relative overflow-hidden rounded-4xl border border-white/10">
-          <img
-            src="/kickboksen-kids.webp"
-            alt="Kinderkickboksles bij FitCity"
-            className="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-            sizes="(min-width: 1024px) 50vw, 100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" aria-hidden="true" />
-        </div>
-        <div className="space-y-4 text-white/70 lg:max-w-xl">
-          <p>
-            Kids leren de basis van kickboksen in een veilige, positieve setting. Techniek, discipline en plezier staan centraal.
-          </p>
-          <ul className="space-y-3 text-sm">
-            {kidsHighlights.map((item) => (
-              <li key={item} className="flex items-start gap-3">
-                <span className="mt-1 inline-block h-1 w-4 rounded-full bg-fitcity" aria-hidden="true" />
-                {item}
-              </li>
-            ))}
-          </ul>
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-            <Button as={Link} to={primaryCta.href} className="sm:min-w-[180px]" data-tracking-id={primaryCta.trackingId}>
-              Plan een proefles
-            </Button>
-            <Button as={Link} to="/contact" variant="ghost" className="sm:min-w-[180px] justify-center">
-              Stel een vraag
-            </Button>
-          </div>
         </div>
       </Section>
 

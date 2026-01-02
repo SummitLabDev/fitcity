@@ -19,7 +19,7 @@ const kickboxingFeatures = [
   {
     icon: Clock,
     title: 'Flexibel rooster',
-    copy: 'Avondlessen ma/do en een zondagsblok voor kids en volwassenen.',
+    copy: 'Avondlessen ma/do en een zondagsblok, flexibel in te plannen.',
   },
 ];
 
@@ -27,22 +27,19 @@ const kickboxingSchedule = [
   {
     day: 'Maandag',
     sessions: [
-      { label: 'Kids', time: '18:00 - 19:00' },
-      { label: 'Volwassenen', time: '19:00 - 20:00' },
+      { label: 'Kickboksen', time: '19:00 - 20:00' },
     ],
   },
   {
     day: 'Donderdag',
     sessions: [
-      { label: 'Kids', time: '18:00 - 19:00' },
-      { label: 'Volwassenen', time: '19:00 - 20:00' },
+      { label: 'Kickboksen', time: '19:00 - 20:00' },
     ],
   },
   {
     day: 'Zondag',
     sessions: [
-      { label: 'Kids', time: '10:00 - 11:00' },
-      { label: 'Volwassenen', time: '11:00 - 12:00' },
+      { label: 'Kickboksen', time: '11:00 - 12:00' },
     ],
   },
 ];

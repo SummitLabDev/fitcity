@@ -121,26 +121,28 @@ const Hero = () => {
                   </div>
                 ))}
               </div>
-              <div className="mt-3 text-xs text-white/60">
-                <p className="uppercase tracking-[0.3em] text-white/50">Speciale openingstijden</p>
-                <div className="mt-2 space-y-1 text-[13px] text-white/80">
-                  {holidayHours.map((item) => {
-                    const isToday = item.day.toLowerCase() === todayKey;
-                    return (
-                      <div
-                        key={item.day}
-                        className="flex items-center justify-between gap-3"
-                      >
-                        <span className="inline-flex items-center gap-1">
-                          <span className="font-semibold">{item.day}</span>
-                          {isToday && <span className="inline-block h-1.5 w-1.5 rounded-full bg-fitcity" aria-label="Vandaag" />}
-                        </span>
-                        <span className="text-white/70">{item.status}</span>
-                      </div>
-                    );
-                  })}
+              {holidayHours.length > 0 && (
+                <div className="mt-3 text-xs text-white/60">
+                  <p className="uppercase tracking-[0.3em] text-white/50">Speciale openingstijden</p>
+                  <div className="mt-2 space-y-1 text-[13px] text-white/80">
+                    {holidayHours.map((item) => {
+                      const isToday = item.day.toLowerCase() === todayKey;
+                      return (
+                        <div
+                          key={item.day}
+                          className="flex items-center justify-between gap-3"
+                        >
+                          <span className="inline-flex items-center gap-1">
+                            <span className="font-semibold">{item.day}</span>
+                            {isToday && <span className="inline-block h-1.5 w-1.5 rounded-full bg-fitcity" aria-label="Vandaag" />}
+                          </span>
+                          <span className="text-white/70">{item.status}</span>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </motion.div>
         </Container>
